@@ -1,6 +1,71 @@
 {
-  "version": 1,
-  "last_success_at": null,
-  "seen": {}
+  "last_success_at": "2026-07-25T09:14:25.091474Z",
+  "seen": {
+    "doi:10.1002/psp.70325": {
+      "doi": "10.1002/psp.70325",
+      "sent_at": "2026-07-25T09:14:25.091474Z",
+      "title": "Changing Spatial Patterns of Internal Migration in Germany: Behavioural Shifts or Population Ageing Effect?"
+    },
+    "doi:10.1002/psp.70333": {
+      "doi": "10.1002/psp.70333",
+      "sent_at": "2026-07-25T09:14:25.091474Z",
+      "title": "Unpacking the Differential Impact of Development on Internal Migration Across Educational Groups of Population and the Urban Hierarchy"
+    },
+    "doi:10.1007/s00148-026-01169-9": {
+      "doi": "10.1007/s00148-026-01169-9",
+      "sent_at": "2026-07-25T09:14:25.091474Z",
+      "title": "Lives, livelihoods, and learning: A global perspective on the well-being impacts of the COVID-19 pandemic"
+    },
+    "doi:10.1007/s10834-026-10105-8": {
+      "doi": "10.1007/s10834-026-10105-8",
+      "sent_at": "2026-07-25T09:14:25.091474Z",
+      "title": "Parenthood Transition and Financial Well-Being Across Gender and Occupational Class: A Longitudinal Study in the United Kingdom"
+    },
+    "doi:10.1007/s11113-026-10030-6": {
+      "doi": "10.1007/s11113-026-10030-6",
+      "sent_at": "2026-07-25T09:14:25.091474Z",
+      "title": "Did the COVID-19 Pandemic Reduce Skill Mismatch Among Migrants in Germany’s Health Sector?"
+    },
+    "doi:10.1016/j.rssm.2026.101182": {
+      "doi": "10.1016/j.rssm.2026.101182",
+      "sent_at": "2026-07-25T09:14:25.091474Z",
+      "title": "Intergenerational mobility across nine generations: Evidence from Poland, 1800–1984"
+    },
+    "doi:10.1080/1369183x.2026.2702723": {
+      "doi": "10.1080/1369183x.2026.2702723",
+      "sent_at": "2026-07-25T09:14:25.091474Z",
+      "title": "Essential and disposable: racial capitalism and Polish migrant workers"
+    },
+    "doi:10.1080/1369183x.2026.2702731": {
+      "doi": "10.1080/1369183x.2026.2702731",
+      "sent_at": "2026-07-25T09:14:25.091474Z",
+      "title": "Coming back without losing out: return migration and subjective well-being among privileged migrants"
+    },
+    "doi:10.1111/1467-9566.70229": {
+      "doi": "10.1111/1467-9566.70229",
+      "sent_at": "2026-07-25T09:14:25.091474Z",
+      "title": "Algorithmic Choreography: Redefining Human and Non‐Human Relations in Digital Health"
+    },
+    "doi:10.1111/1467-9566.70239": {
+      "doi": "10.1111/1467-9566.70239",
+      "sent_at": "2026-07-25T09:14:25.091474Z",
+      "title": "Pharmacological Practices Among Chilean University Students: Between Emotional Mediations, Performance Demands, and Health Mandates"
+    },
+    "doi:10.1111/jomf.70103": {
+      "doi": "10.1111/jomf.70103",
+      "sent_at": "2026-07-25T09:14:25.091474Z",
+      "title": "Who Gets Help From Parents? Gender, Socioeconomic Status, and Sibling Bargaining Over Childcare in China"
+    },
+    "doi:10.1177/14687941261466610": {
+      "doi": "10.1177/14687941261466610",
+      "sent_at": "2026-07-25T09:14:25.091474Z",
+      "title": "Dialogic inquiry interviews: presenting a novel method for exploring young people's conceptualisations of well-being"
+    },
+    "doi:10.3982/ecta23358": {
+      "doi": "10.3982/ecta23358",
+      "sent_at": "2026-07-25T09:14:25.091474Z",
+      "title": "The Class Gap in Career Progression: Evidence From U.S. Academia"
+    }
+  },
+  "version": 1
 }
-
