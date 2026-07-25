@@ -15,6 +15,7 @@ from .models import Paper, RunResult, SourceReport
 from .render import write_outputs
 from .scoring import rank_papers, score_paper
 from .sources.crossref import CrossrefClient
+from .sources.magtech import fetch_magtech_current
 from .sources.openalex import OpenAlexClient
 from .sources.rss import fetch_feed
 from .state import load_state, mark_seen, save_state, unseen_papers
@@ -101,9 +102,38 @@ def run_pipeline(config: dict[str, Any], dry_run: bool = False, now=None) -> Run
 
     rss_cfg = sources_config.get("rss") or {}
     if rss_cfg.get("enabled", True):
+        rss_timeout = int(rss_cfg.get("timeout_seconds", 8))
         for feed, priority in _journal_by_feed(config):
             name = f"RSS｜{feed.get('name', 'unknown feed')}"
-            papers, report = _safe_fetch(name, lambda feed=feed, priority=priority: fetch_feed(feed, start, priority))
+            papers, report = _safe_fetch(
+                name,
+                lambda feed=feed, priority=priority: fetch_feed(
+                    feed,
+                    start,
+                    priority,
+                    timeout=rss_timeout,
+                ),
+            )
+            all_papers.extend(papers)
+            reports.append(report)
+
+    magtech_cfg = sources_config.get("magtech") or {}
+    if magtech_cfg.get("enabled", True):
+        magtech_timeout = int(magtech_cfg.get("timeout_seconds", 15))
+        for journal in config.get("journals") or []:
+            if not journal.get("enabled", True) or not journal.get("magtech_url"):
+                continue
+            name = f"官网｜{journal.get('name', 'unknown journal')}"
+            priority = float(journal.get("priority", 0) or 0)
+            papers, report = _safe_fetch(
+                name,
+                lambda journal=journal, priority=priority: fetch_magtech_current(
+                    journal,
+                    start,
+                    priority,
+                    timeout=magtech_timeout,
+                ),
+            )
             all_papers.extend(papers)
             reports.append(report)
 
@@ -194,4 +224,3 @@ def run_pipeline(config: dict[str, Any], dry_run: bool = False, now=None) -> Run
         emailed=emailed,
         output_files=output_files,
     )
-
