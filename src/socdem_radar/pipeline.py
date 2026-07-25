@@ -101,9 +101,18 @@ def run_pipeline(config: dict[str, Any], dry_run: bool = False, now=None) -> Run
 
     rss_cfg = sources_config.get("rss") or {}
     if rss_cfg.get("enabled", True):
+        rss_timeout = int(rss_cfg.get("timeout_seconds", 8))
         for feed, priority in _journal_by_feed(config):
             name = f"RSS｜{feed.get('name', 'unknown feed')}"
-            papers, report = _safe_fetch(name, lambda feed=feed, priority=priority: fetch_feed(feed, start, priority))
+            papers, report = _safe_fetch(
+                name,
+                lambda feed=feed, priority=priority: fetch_feed(
+                    feed,
+                    start,
+                    priority,
+                    timeout=rss_timeout,
+                ),
+            )
             all_papers.extend(papers)
             reports.append(report)
 
@@ -194,4 +203,3 @@ def run_pipeline(config: dict[str, Any], dry_run: bool = False, now=None) -> Run
         emailed=emailed,
         output_files=output_files,
     )
-
