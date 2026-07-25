@@ -19,8 +19,11 @@ class ConfigTests(unittest.TestCase):
         journals = config["journals"]
         enabled = [journal for journal in journals if journal.get("enabled", True)]
         self.assertEqual(len(journals), 152)
-        self.assertEqual(len(enabled), 106)
-        self.assertTrue(all(journal.get("issns") for journal in enabled))
+        self.assertEqual(len(enabled), 109)
+        self.assertTrue(
+            all(journal.get("issns") or journal.get("rss_url") or journal.get("magtech_url") for journal in enabled)
+        )
+        self.assertIn("Magtech", enabled_sources(config))
 
         groups = {group["name"]: group for group in config["research_profile"]["groups"]}
         self.assertEqual(len(groups), 8)

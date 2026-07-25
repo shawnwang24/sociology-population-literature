@@ -2,6 +2,7 @@ import unittest
 from datetime import UTC, datetime
 
 from socdem_radar.sources.crossref import CrossrefClient, parse_crossref_item
+from socdem_radar.sources.magtech import parse_magtech_current
 from socdem_radar.sources.openalex import OpenAlexClient, parse_openalex_work, reconstruct_abstract
 from socdem_radar.sources.rss import fetch_feed
 
@@ -136,6 +137,49 @@ class SourceParsingTests(unittest.TestCase):
         self.assertEqual(len(papers), 1)
         self.assertEqual(papers[0].doi, "10.1000/rss")
         self.assertEqual(session.calls[0][1]["timeout"], 30)
+
+    def test_parse_magtech_legacy_current_issue(self):
+        html = """
+        <div class="njq">2026年 第50卷 第3期 刊出日期：2026-05-29</div>
+        <DIV id='art3948' class=noselectrow>
+          <a href="/CN/Y2026/V50/I3/3" class="biaoti">分化与趋同：中国老年人老化态度的演进</a>
+          <dd class="zuozhe">梁宏, 陈云龙</dd>
+          <dd class="kmnjq">2026, 50(3): 3-18.</dd>
+          <div id="Abstract3948" class="white_content zhaiyao">这是一段中文摘要。</div>
+        </DIV>
+        """
+        papers = parse_magtech_current(
+            html,
+            {"name": "人口研究"},
+            "https://rkyj.ruc.edu.cn/CN/1000-6087/current.shtml",
+            journal_priority=2,
+        )
+        self.assertEqual(len(papers), 1)
+        self.assertEqual(papers[0].authors, ["梁宏", "陈云龙"])
+        self.assertEqual(papers[0].published_at, "2026-05-29")
+        self.assertEqual(papers[0].abstract, "这是一段中文摘要。")
+        self.assertEqual(papers[0].url, "https://rkyj.ruc.edu.cn/CN/Y2026/V50/I3/3")
+        self.assertEqual(papers[0].metadata["journal_priority"], 2)
+
+    def test_parse_magtech_modern_current_issue(self):
+        html = """
+        <div>刊出日期：2026-05-20</div>
+        <li id="art718" class="noselectrow">
+          <div class="j-title-1"><a href="http://src.ruc.edu.cn/CN/Y2026/V14/I3/5">职业与健康研究</a></div>
+          <div class="j-author">王修晓 袁章伶</div>
+          <span class="j-volumn">社会学评论. 2026, 14(3): 5-25.</span>
+          <div class="j-abstract">完整摘要。</div>
+        </li>
+        """
+        papers = parse_magtech_current(
+            html,
+            {"name": "社会学评论"},
+            "https://src.ruc.edu.cn/CN/2095-5154/current.shtml",
+        )
+        self.assertEqual(len(papers), 1)
+        self.assertEqual(papers[0].authors, ["王修晓", "袁章伶"])
+        self.assertEqual(papers[0].url, "https://src.ruc.edu.cn/CN/Y2026/V14/I3/5")
+        self.assertEqual(papers[0].source, "Magtech")
 
 
 if __name__ == "__main__":

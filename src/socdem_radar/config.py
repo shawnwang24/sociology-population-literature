@@ -63,8 +63,13 @@ def validate_config(config: dict[str, Any]) -> None:
     for index, journal in enumerate(config.get("journals") or [], start=1):
         if not journal.get("name"):
             errors.append(f"第 {index} 本期刊缺少 name")
-        if journal.get("enabled", True) and not journal.get("issns") and not journal.get("rss_url"):
-            errors.append(f"启用的期刊 {journal.get('name', index)} 至少需要 issns 或 rss_url")
+        if (
+            journal.get("enabled", True)
+            and not journal.get("issns")
+            and not journal.get("rss_url")
+            and not journal.get("magtech_url")
+        ):
+            errors.append(f"启用的期刊 {journal.get('name', index)} 至少需要 issns、rss_url 或 magtech_url")
 
     if errors:
         raise ConfigError("配置检查未通过：\n- " + "\n- ".join(errors))
@@ -88,6 +93,11 @@ def enabled_sources(config: dict[str, Any]) -> list[str]:
     )
     if rss_enabled and has_rss:
         names.append("RSS")
+    magtech_enabled = (config.get("sources") or {}).get("magtech", {}).get("enabled", True)
+    if magtech_enabled and any(
+        j.get("enabled", True) and j.get("magtech_url") for j in config.get("journals", [])
+    ):
+        names.append("Magtech")
     openalex = (config.get("sources") or {}).get("openalex", {})
     if openalex.get("enabled", True) and openalex.get("discovery_enabled", False):
         names.append("OpenAlex discovery")

@@ -8,6 +8,7 @@
 
 - 通过期刊 ISSN 从 Crossref 读取最近登记的新论文；
 - 可用 RSS/Atom 更快发现 Online First / Early View；
+- 可从部分中文期刊的 Magtech 编辑部官网读取当期标题、作者和完整中文摘要；
 - 可用 OpenAlex 按 DOI 补充摘要、主题、关键词和开放获取链接；
 - 可选用 OpenAlex 主题检索跨期刊发现论文；
 - 分别给标题、摘要、作者关键词和 OpenAlex 主题赋权；
@@ -25,7 +26,7 @@
 config/
   settings.yml       运行、评分、邮件和数据源设置
   topics.yml         研究方向、关键词、作者、排除词
-  journals.yml       目标期刊、ISSN、优先级、可选 RSS
+  journals.yml       目标期刊、ISSN、优先级、可选 RSS/中文期刊官网
   feeds.yml          工作论文平台或其他通用 RSS
 data/state.json      已推送论文的去重状态
 src/socdem_radar/    程序主体
@@ -43,7 +44,7 @@ tests/               离线测试
 
 修改：
 
-- `config/journals.yml`：期刊名称、纸质版/电子版 ISSN、期刊优先级；
+- `config/journals.yml`：期刊名称、纸质版/电子版 ISSN、期刊优先级，以及可选的 `rss_url`/`magtech_url`；
 - `config/topics.yml`：主题组、关键词、权重、关注作者、排除词；
 - `config/settings.yml`：相关性阈值、每封最多几篇、回看天数。
 
@@ -161,6 +162,7 @@ Gmail 通常需要先开启两步验证，再生成单独的 App Password。不�
 - **Crossref**：最适合按 ISSN 精确监测指定期刊；元数据完整度取决于出版社实际提交的内容。
 - **OpenAlex**：适合补摘要、主题和开放获取地址。2026 年起官方用 API key 取代原来的 `mailto` polite-pool 机制；免费 key 足以支持个人化小规模雷达。
 - **RSS/Atom**：通常比卷期信息更快，但出版社会改变 feed 地址；失效后需要更新 URL。
+- **中文期刊官网**：当前已接通《人口研究》《社会》《社会学评论》的当期目录；这些页面直接提供中文摘要，无需额外 API key。
 
 本项目每次都回看最近 14 天，再用 `state.json` 去重。这样即使一次定时任务延迟或某个来源暂时失败，也比只依赖“上次运行时间到现在”的窗口更不容易漏报。
 
@@ -168,7 +170,7 @@ Gmail 通常需要先开启两步验证，再生成单独的 App Password。不�
 
 - “新论文”指在数据源窗口中出现的新记录，不保证等同于纸质卷期的正式出版日；
 - Crossref 可能缺摘要和作者关键词，OpenAlex 也并非每篇都有摘要；缺失时程序不会虚构结论；
-- 中文期刊若没有稳定的 Crossref 元数据或 RSS，需要后续单独写官网适配器；
+- 完整核心目录中的中文期刊会全部保留；只有存在可稳定访问的数据源时才启用，避免把“目录已收录”误当成“已经抓取成功”；
 - OpenAlex 跨期刊检索比期刊 ISSN 监测噪声大，默认关闭；
 - GitHub Actions 的定时任务可能延迟，因此邮件不应被当作分钟级提醒服务；
 - 相关性评分是信息筛选工具，不是文献质量评价或系统综述的纳入标准。
@@ -179,7 +181,7 @@ Gmail 通常需要先开启两步验证，再生成单独的 App Password。不�
 python -m unittest discover -s tests -v
 ```
 
-测试不访问外网，覆盖配置、关键词边界、排除词、DOI/标题去重、Crossref/OpenAlex 解析、摘要重建和状态持久化。
+测试不访问外网，覆盖配置、关键词边界、排除词、DOI/标题去重、Crossref/OpenAlex/中文期刊官网解析、摘要重建和状态持久化。
 
 ## 参考接口
 
@@ -193,4 +195,3 @@ python -m unittest discover -s tests -v
 ## 许可证
 
 MIT。
-

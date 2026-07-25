@@ -1855,168 +1855,169 @@ journals:
   - 人口学
   issns: []
   priority: 1
-  rss_url: https://rkyj.ruc.edu.cn/CN/rss_dqml_1000-6087.xml
+  rss_url: ''
+  magtech_url: https://rkyj.ruc.edu.cn/CN/1000-6087/current.shtml
   catalog: 完整核心版
   core_basis: CSSCI（2025—2026）
   impact_factor: 11.566
   catalog_source: https://cssrac.nju.edu.cn/cpzx/zwshkxywsy/index.html
-  monitoring_note: 已启用编辑部官网当期目录 RSS。
+  monitoring_note: 已启用编辑部官网当期目录；抓取标题、作者、发布日期和中文摘要。
 - name: 中国人口科学
-  enabled: true
+  enabled: false
   language: zh-CN
   disciplines:
   - 人口学
   issns: []
   priority: 1
-  rss_url: https://navi.cnki.net/knavi/rss/ZKRK
+  rss_url: ''
   catalog: 完整核心版
   core_basis: CSSCI（2025—2026）
   impact_factor: 10.286
   catalog_source: https://cssrac.nju.edu.cn/cpzx/zwshkxywsy/index.html
-  monitoring_note: 已启用知网期刊 RSS。
+  monitoring_note: 已纳入完整核心目录；知网 RSS 在 GitHub Actions 无法解析域名，待接入可达官网来源后启用。
 - name: 人口与发展
-  enabled: true
+  enabled: false
   language: zh-CN
   disciplines:
   - 人口学
   issns: []
   priority: 1
-  rss_url: https://navi.cnki.net/knavi/rss/SCRK
+  rss_url: ''
   catalog: 完整核心版
   core_basis: CSSCI（2025—2026）
   impact_factor: null
   catalog_source: https://cssrac.nju.edu.cn/cpzx/zwshkxywsy/index.html
-  monitoring_note: 已启用知网期刊 RSS。
+  monitoring_note: 已纳入完整核心目录；知网 RSS 在 GitHub Actions 无法解析域名，待接入可达官网来源后启用。
 - name: 人口与经济
-  enabled: true
+  enabled: false
   language: zh-CN
   disciplines:
   - 人口学
   issns: []
   priority: 1
-  rss_url: https://navi.cnki.net/knavi/rss/RKJJ
+  rss_url: ''
   catalog: 完整核心版
   core_basis: CSSCI（2025—2026）
   impact_factor: null
   catalog_source: https://cssrac.nju.edu.cn/cpzx/zwshkxywsy/index.html
-  monitoring_note: 已启用知网期刊 RSS。
+  monitoring_note: 已纳入完整核心目录；知网 RSS 在 GitHub Actions 无法解析域名，待接入可达官网来源后启用。
 - name: 人口学刊
-  enabled: true
+  enabled: false
   language: zh-CN
   disciplines:
   - 人口学
   issns: []
   priority: 1
-  rss_url: https://navi.cnki.net/knavi/rss/RKXK
+  rss_url: ''
   catalog: 完整核心版
   core_basis: CSSCI（2025—2026）
   impact_factor: null
   catalog_source: https://cssrac.nju.edu.cn/cpzx/zwshkxywsy/index.html
-  monitoring_note: 已启用知网期刊 RSS。
+  monitoring_note: 已纳入完整核心目录；知网 RSS 在 GitHub Actions 无法解析域名，待接入可达官网来源后启用。
 - name: 南方人口
-  enabled: true
+  enabled: false
   language: zh-CN
   disciplines:
   - 人口学
   issns: []
   priority: 1
-  rss_url: https://navi.cnki.net/knavi/rss/NFRK
+  rss_url: ''
   catalog: 完整核心版
   core_basis: CSSCI（2025—2026）
   impact_factor: null
   catalog_source: https://cssrac.nju.edu.cn/cpzx/zwshkxywsy/index.html
-  monitoring_note: 已启用知网期刊 RSS。
+  monitoring_note: 已纳入完整核心目录；知网 RSS 在 GitHub Actions 无法解析域名，待接入可达官网来源后启用。
 - name: 西北人口
-  enabled: true
+  enabled: false
   language: zh-CN
   disciplines:
   - 人口学
   issns: []
   priority: 1
-  rss_url: https://navi.cnki.net/knavi/rss/XBRK
+  rss_url: ''
   catalog: 完整核心版
   core_basis: CSSCI（2025—2026）
   impact_factor: null
   catalog_source: https://cssrac.nju.edu.cn/cpzx/zwshkxywsy/index.html
-  monitoring_note: 已启用知网期刊 RSS。
+  monitoring_note: 已纳入完整核心目录；知网 RSS 在 GitHub Actions 无法解析域名，待接入可达官网来源后启用。
 - name: 社会学研究
-  enabled: true
+  enabled: false
   language: zh-CN
   disciplines:
   - 社会学
   issns: []
   priority: 1
-  rss_url: https://navi.cnki.net/knavi/rss/SHXJ
+  rss_url: ''
   catalog: 完整核心版
   core_basis: CSSCI（2025—2026）
   impact_factor: 9.876
   catalog_source: https://cssrac.nju.edu.cn/cpzx/zwshkxywsy/index.html
-  monitoring_note: 已启用知网期刊 RSS。
+  monitoring_note: 已纳入完整核心目录；知网 RSS 在 GitHub Actions 无法解析域名，待接入可达官网来源后启用。
 - name: 中国青年研究
-  enabled: true
+  enabled: false
   language: zh-CN
   disciplines:
   - 社会学
   issns: []
   priority: 1
-  rss_url: https://navi.cnki.net/knavi/rss/ZGQL
+  rss_url: ''
   catalog: 完整核心版
   core_basis: CSSCI（2025—2026）
   impact_factor: null
   catalog_source: https://cssrac.nju.edu.cn/cpzx/zwshkxywsy/index.html
-  monitoring_note: 已启用知网期刊 RSS。
+  monitoring_note: 已纳入完整核心目录；知网 RSS 在 GitHub Actions 无法解析域名，待接入可达官网来源后启用。
 - name: 妇女研究论丛
-  enabled: true
+  enabled: false
   language: zh-CN
   disciplines:
   - 社会学
   issns: []
   priority: 1
-  rss_url: https://navi.cnki.net/knavi/rss/FNYJ
+  rss_url: ''
   catalog: 完整核心版
   core_basis: CSSCI（2025—2026）
   impact_factor: null
   catalog_source: https://cssrac.nju.edu.cn/cpzx/zwshkxywsy/index.html
-  monitoring_note: 已启用知网期刊 RSS。
+  monitoring_note: 已纳入完整核心目录；知网 RSS 在 GitHub Actions 无法解析域名，待接入可达官网来源后启用。
 - name: 学海
-  enabled: true
+  enabled: false
   language: zh-CN
   disciplines:
   - 社会学
   issns: []
   priority: 1
-  rss_url: https://navi.cnki.net/knavi/rss/XHAI
+  rss_url: ''
   catalog: 完整核心版
   core_basis: CSSCI（2025—2026）
   impact_factor: null
   catalog_source: https://cssrac.nju.edu.cn/cpzx/zwshkxywsy/index.html
-  monitoring_note: 已启用知网期刊 RSS。
+  monitoring_note: 已纳入完整核心目录；知网 RSS 在 GitHub Actions 无法解析域名，待接入可达官网来源后启用。
 - name: 开放时代
-  enabled: true
+  enabled: false
   language: zh-CN
   disciplines:
   - 社会学
   issns: []
   priority: 1
-  rss_url: https://navi.cnki.net/knavi/rss/KFSD
+  rss_url: ''
   catalog: 完整核心版
   core_basis: CSSCI（2025—2026）
   impact_factor: null
   catalog_source: https://cssrac.nju.edu.cn/cpzx/zwshkxywsy/index.html
-  monitoring_note: 已启用知网期刊 RSS。
+  monitoring_note: 已纳入完整核心目录；知网 RSS 在 GitHub Actions 无法解析域名，待接入可达官网来源后启用。
 - name: 探索与争鸣
-  enabled: true
+  enabled: false
   language: zh-CN
   disciplines:
   - 社会学
   issns: []
   priority: 1
-  rss_url: https://navi.cnki.net/knavi/rss/TSZM
+  rss_url: ''
   catalog: 完整核心版
   core_basis: CSSCI（2025—2026）
   impact_factor: null
   catalog_source: https://cssrac.nju.edu.cn/cpzx/zwshkxywsy/index.html
-  monitoring_note: 已启用知网期刊 RSS。
+  monitoring_note: 已纳入完整核心目录；知网 RSS 在 GitHub Actions 无法解析域名，待接入可达官网来源后启用。
 - name: 社会
   enabled: true
   language: zh-CN
@@ -2024,12 +2025,13 @@ journals:
   - 社会学
   issns: []
   priority: 1
-  rss_url: https://navi.cnki.net/knavi/rss/SHEH
+  rss_url: ''
+  magtech_url: https://www.society.shu.edu.cn/CN/1004-8804/current.shtml
   catalog: 完整核心版
   core_basis: CSSCI（2025—2026）
   impact_factor: null
   catalog_source: https://cssrac.nju.edu.cn/cpzx/zwshkxywsy/index.html
-  monitoring_note: 已启用知网期刊 RSS。
+  monitoring_note: 已启用编辑部官网当期目录；抓取标题、作者、发布日期和中文摘要。
 - name: 社会学评论
   enabled: true
   language: zh-CN
@@ -2037,35 +2039,36 @@ journals:
   - 社会学
   issns: []
   priority: 1
-  rss_url: https://navi.cnki.net/knavi/rss/SHPL
+  rss_url: ''
+  magtech_url: http://src.ruc.edu.cn/CN/2095-5154/current.shtml
   catalog: 完整核心版
   core_basis: CSSCI（2025—2026）
   impact_factor: null
   catalog_source: https://cssrac.nju.edu.cn/cpzx/zwshkxywsy/index.html
-  monitoring_note: 已启用知网期刊 RSS。
+  monitoring_note: 已启用编辑部官网当期目录；抓取标题、作者、发布日期和中文摘要。
 - name: 社会建设
-  enabled: true
+  enabled: false
   language: zh-CN
   disciplines:
   - 社会学
   issns: []
   priority: 1
-  rss_url: https://navi.cnki.net/knavi/rss/SHJS
+  rss_url: ''
   catalog: 完整核心版
   core_basis: CSSCI（2025—2026）
   impact_factor: null
   catalog_source: https://cssrac.nju.edu.cn/cpzx/zwshkxywsy/index.html
-  monitoring_note: 已启用知网期刊 RSS；期刊代码待远程运行复核。
+  monitoring_note: 已纳入完整核心目录；知网 RSS 在 GitHub Actions 无法解析域名，待接入可达官网来源后启用。
 - name: 青年研究
-  enabled: true
+  enabled: false
   language: zh-CN
   disciplines:
   - 社会学
   issns: []
   priority: 1
-  rss_url: https://navi.cnki.net/knavi/rss/QNYJ
+  rss_url: ''
   catalog: 完整核心版
   core_basis: CSSCI（2025—2026）
   impact_factor: null
   catalog_source: https://cssrac.nju.edu.cn/cpzx/zwshkxywsy/index.html
-  monitoring_note: 已启用知网期刊 RSS；期刊代码待远程运行复核。
+  monitoring_note: 已纳入完整核心目录；知网 RSS 在 GitHub Actions 无法解析域名，待接入可达官网来源后启用。

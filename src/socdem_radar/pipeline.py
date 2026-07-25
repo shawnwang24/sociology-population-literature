@@ -15,6 +15,7 @@ from .models import Paper, RunResult, SourceReport
 from .render import write_outputs
 from .scoring import rank_papers, score_paper
 from .sources.crossref import CrossrefClient
+from .sources.magtech import fetch_magtech_current
 from .sources.openalex import OpenAlexClient
 from .sources.rss import fetch_feed
 from .state import load_state, mark_seen, save_state, unseen_papers
@@ -111,6 +112,26 @@ def run_pipeline(config: dict[str, Any], dry_run: bool = False, now=None) -> Run
                     start,
                     priority,
                     timeout=rss_timeout,
+                ),
+            )
+            all_papers.extend(papers)
+            reports.append(report)
+
+    magtech_cfg = sources_config.get("magtech") or {}
+    if magtech_cfg.get("enabled", True):
+        magtech_timeout = int(magtech_cfg.get("timeout_seconds", 15))
+        for journal in config.get("journals") or []:
+            if not journal.get("enabled", True) or not journal.get("magtech_url"):
+                continue
+            name = f"官网｜{journal.get('name', 'unknown journal')}"
+            priority = float(journal.get("priority", 0) or 0)
+            papers, report = _safe_fetch(
+                name,
+                lambda journal=journal, priority=priority: fetch_magtech_current(
+                    journal,
+                    start,
+                    priority,
+                    timeout=magtech_timeout,
                 ),
             )
             all_papers.extend(papers)
