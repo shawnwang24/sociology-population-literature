@@ -65,7 +65,9 @@ def fetch_feed(
     timeout: int = 30,
     session: requests.Session | None = None,
 ) -> list[Paper]:
-    client = session or build_session("SocDemLiteratureRadar/0.1")
+    # RSS endpoints are independent of one another. Avoid retrying a broken
+    # feed repeatedly so one publisher cannot stall the entire digest.
+    client = session or build_session("SocDemLiteratureRadar/0.1", retries=0)
     response = client.get(feed["url"], timeout=timeout, headers={"Accept": "application/atom+xml, application/rss+xml, application/xml, text/xml"})
     response.raise_for_status()
     parsed = feedparser.parse(response.content)

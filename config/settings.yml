@@ -34,7 +34,7 @@ sources:
     timeout_seconds: 30
   rss:
     enabled: true
-    timeout_seconds: 8
+    timeout_seconds: 5
 email:
   enabled: true
   send_empty_digest: false

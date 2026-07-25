@@ -5,11 +5,11 @@ from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 
 
-def build_session(user_agent: str) -> requests.Session:
+def build_session(user_agent: str, retries: int = 4) -> requests.Session:
     retry = Retry(
-        total=4,
-        connect=4,
-        read=4,
+        total=retries,
+        connect=retries,
+        read=retries,
         backoff_factor=0.8,
         status_forcelist=(429, 500, 502, 503, 504),
         allowed_methods=frozenset({"GET", "POST"}),
@@ -21,4 +21,3 @@ def build_session(user_agent: str) -> requests.Session:
     session.mount("https://", adapter)
     session.mount("http://", adapter)
     return session
-
