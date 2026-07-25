@@ -1,0 +1,65 @@
+version: 1
+profile:
+  name: 我的社会学与人口学文献雷达
+  language: zh-CN
+  timezone: Asia/Shanghai
+lookback:
+  days: 14
+selection:
+  min_score: 6
+  max_papers: 15
+  max_per_journal: 5
+scoring:
+  title_multiplier: 3.0
+  abstract_multiplier: 1.0
+  keyword_multiplier: 2.0
+  topic_multiplier: 1.5
+  journal_priority_weight: 1.0
+  watched_author_bonus: 5.0
+  max_terms_per_group: 3
+sources:
+  crossref:
+    enabled: true
+    mailto_env: CROSSREF_MAILTO
+    rows_per_journal: 100
+    max_pages_per_journal: 3
+    timeout_seconds: 30
+  openalex:
+    enabled: true
+    api_key_env: OPENALEX_API_KEY
+    enrich_by_doi: true
+    max_enrichments_per_run: 40
+    discovery_enabled: false
+    discovery_results_per_query: 50
+    timeout_seconds: 30
+  rss:
+    enabled: true
+email:
+  enabled: true
+  send_empty_digest: false
+  sender_name: 社会学与人口学文献雷达
+  subject_prefix: '[文献雷达]'
+  smtp:
+    host: smtp.qq.com
+    port: 465
+    use_ssl: true
+    use_starttls: false
+    username_env: SMTP_USERNAME
+    password_env: SMTP_PASSWORD
+    from_env: SMTP_FROM
+    to_env: EMAIL_TO
+summarization:
+  enabled: false
+  endpoint: https://api.openai.com/v1/chat/completions
+  api_key_env: LLM_API_KEY
+  model_env: LLM_MODEL
+  model: ''
+  max_papers: 5
+render:
+  abstract_max_chars: 900
+  archive: true
+deduplication:
+  retention_days: 730
+paths:
+  state_file: data/state.json
+  output_dir: outputs

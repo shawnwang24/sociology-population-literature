@@ -1,0 +1,195 @@
+research_profile:
+  # OpenAlex 跨期刊发现仅在 settings.yml 的 discovery_enabled: true 时启用。
+  discovery_queries:
+    - '"occupational mismatch" OR "skill mismatch" OR overqualification'
+    - '"social stratification" OR "class identity" OR "subjective social status"'
+    - 'meritocracy OR "meritocratic beliefs"'
+    - '"migrant workers" OR hukou OR "rural-to-urban migrants"'
+    - 'happiness OR "subjective well-being" OR "life satisfaction"'
+    - 'health AND (occupation OR employment OR "social class")'
+
+  watched_authors: []
+
+  # 命中任一排除词就不推送。只保留明确无关的生物医学实验词。
+  exclude_keywords:
+    - "animal experiment"
+    - "mouse model"
+    - "rat model"
+    - "in vitro"
+    - "动物实验"
+    - "小鼠模型"
+    - "体外实验"
+
+  groups:
+    - name: "健康"
+      enabled: true
+      weight: 1.5
+      keywords:
+        - "health"
+        - "health status"
+        - "self-rated health"
+        - "physical health"
+        - "mental health"
+        - "health inequality"
+        - "health inequalities"
+        - "social determinants of health"
+        - "健康"
+        - "健康状况"
+        - "自评健康"
+        - "身体健康"
+        - "心理健康"
+        - "健康不平等"
+
+    - name: "职业与就业"
+      enabled: true
+      weight: 1.3
+      keywords:
+        - "occupation"
+        - "occupational status"
+        - "occupational attainment"
+        - "employment"
+        - "employment status"
+        - "job quality"
+        - "working conditions"
+        - "career"
+        - "职业"
+        - "职业地位"
+        - "职业获得"
+        - "就业"
+        - "就业质量"
+        - "工作条件"
+
+    - name: "职业不匹配与错配"
+      enabled: true
+      weight: 2.5
+      keywords:
+        - "occupational mismatch"
+        - "job mismatch"
+        - "skill mismatch"
+        - "skills mismatch"
+        - "education-job mismatch"
+        - "educational mismatch"
+        - "qualification mismatch"
+        - "overqualification"
+        - "underqualification"
+        - "overeducation"
+        - "undereducation"
+        - "vertical mismatch"
+        - "horizontal mismatch"
+        - "person-job fit"
+        - "职业不匹配"
+        - "职业错配"
+        - "就业错配"
+        - "技能错配"
+        - "教育错配"
+        - "学历错配"
+        - "资质错配"
+        - "过度教育"
+        - "教育不足"
+        - "人职匹配"
+
+    - name: "优绩主义"
+      enabled: true
+      weight: 2.2
+      keywords:
+        - "meritocracy"
+        - "meritocratic"
+        - "meritocratic beliefs"
+        - "belief in meritocracy"
+        - "meritocratic ideology"
+        - "merit-based"
+        - "achievement ideology"
+        - "优绩主义"
+        - "绩优主义"
+        - "功绩主义"
+        - "优绩观念"
+        - "meritocratic belief"
+
+    - name: "社会分层与阶层"
+      enabled: true
+      weight: 1.8
+      keywords:
+        - "social stratification"
+        - "social class"
+        - "class inequality"
+        - "class structure"
+        - "socioeconomic status"
+        - "socioeconomic position"
+        - "social status"
+        - "status attainment"
+        - "social mobility"
+        - "intergenerational mobility"
+        - "社会分层"
+        - "社会阶层"
+        - "阶层结构"
+        - "阶层不平等"
+        - "社会经济地位"
+        - "地位获得"
+        - "社会流动"
+        - "代际流动"
+
+    - name: "农民工与流动人口"
+      enabled: true
+      weight: 2.0
+      keywords:
+        - "migrant worker"
+        - "migrant workers"
+        - "rural migrant"
+        - "rural migrants"
+        - "rural-to-urban migrant"
+        - "rural-to-urban migrants"
+        - "internal migrant"
+        - "internal migration"
+        - "floating population"
+        - "hukou"
+        - "household registration"
+        - "农民工"
+        - "流动人口"
+        - "农村流动人口"
+        - "城乡流动"
+        - "乡城迁移"
+        - "户籍"
+        - "户口"
+
+    - name: "阶层认同与阶层观念"
+      enabled: true
+      weight: 2.2
+      keywords:
+        - "class identity"
+        - "class identification"
+        - "class self-identification"
+        - "subjective social class"
+        - "subjective social status"
+        - "perceived social status"
+        - "class consciousness"
+        - "class perception"
+        - "class perceptions"
+        - "class attitudes"
+        - "class beliefs"
+        - "阶层认同"
+        - "阶级认同"
+        - "主观阶层"
+        - "主观社会地位"
+        - "阶层定位"
+        - "阶层意识"
+        - "阶级意识"
+        - "阶层观念"
+        - "阶层感知"
+
+    - name: "幸福感"
+      enabled: true
+      weight: 1.8
+      keywords:
+        - "happiness"
+        - "subjective well-being"
+        - "subjective wellbeing"
+        - "psychological well-being"
+        - "psychological wellbeing"
+        - "life satisfaction"
+        - "well-being"
+        - "wellbeing"
+        - "幸福感"
+        - "主观幸福感"
+        - "生活满意度"
+        - "心理幸福感"
+        - "福祉"

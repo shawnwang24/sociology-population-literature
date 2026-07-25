@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "socdem-literature-radar"
+version = "0.1.0"
+description = "A configurable sociology and demography literature radar"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "SocDem Literature Radar contributors" }]
+dependencies = [
+  "feedparser>=6.0.11,<7",
+  "PyYAML>=6.0.1,<7",
+  "requests>=2.32.0,<3",
+]
+
+[project.scripts]
+socdem-radar = "socdem_radar.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+

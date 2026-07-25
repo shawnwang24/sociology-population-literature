@@ -1,0 +1,142 @@
+import unittest
+from datetime import UTC, datetime
+
+from socdem_radar.sources.crossref import CrossrefClient, parse_crossref_item
+from socdem_radar.sources.openalex import OpenAlexClient, parse_openalex_work, reconstruct_abstract
+from socdem_radar.sources.rss import fetch_feed
+
+
+class FakeResponse:
+    def __init__(self, payload=None, content=b"", status_code=200):
+        self.payload = payload or {}
+        self.content = content
+        self.status_code = status_code
+
+    def json(self):
+        return self.payload
+
+    def raise_for_status(self):
+        if self.status_code >= 400:
+            raise RuntimeError(f"HTTP {self.status_code}")
+
+
+class FakeSession:
+    def __init__(self, responses):
+        self.responses = list(responses)
+        self.calls = []
+
+    def get(self, url, **kwargs):
+        self.calls.append((url, kwargs))
+        return self.responses.pop(0)
+
+
+class SourceParsingTests(unittest.TestCase):
+    def test_reconstruct_openalex_abstract(self):
+        index = {"Health": [0], "inequality": [1], "matters": [2]}
+        self.assertEqual(reconstruct_abstract(index), "Health inequality matters")
+
+    def test_parse_crossref_item(self):
+        item = {
+            "title": ["A paper"],
+            "DOI": "10.1000/ABC",
+            "author": [{"given": "Ada", "family": "Scholar"}],
+            "container-title": ["A Journal"],
+            "published-online": {"date-parts": [[2026, 7, 15]]},
+            "created": {"date-parts": [[2026, 7, 14]]},
+            "abstract": "<jats:p>An abstract.</jats:p>",
+            "subject": ["Sociology"],
+            "URL": "https://doi.org/10.1000/ABC",
+        }
+        paper = parse_crossref_item(item, {"name": "Fallback", "priority": 3})
+        self.assertIsNotNone(paper)
+        self.assertEqual(paper.doi, "10.1000/abc")
+        self.assertEqual(paper.published_at, "2026-07-15")
+        self.assertEqual(paper.abstract, "An abstract.")
+        self.assertEqual(paper.metadata["journal_priority"], 3)
+
+    def test_parse_openalex_work(self):
+        work = {
+            "id": "https://openalex.org/W1",
+            "display_name": "A work",
+            "publication_date": "2026-07-15",
+            "ids": {"doi": "https://doi.org/10.1000/ABC"},
+            "abstract_inverted_index": {"An": [0], "abstract": [1]},
+            "authorships": [{"author": {"display_name": "Ada Scholar"}}],
+            "topics": [{"display_name": "Population Health"}],
+            "keywords": [{"display_name": "health inequality"}],
+            "primary_location": {
+                "landing_page_url": "https://publisher.example/paper",
+                "source": {"display_name": "A Journal"},
+            },
+            "best_oa_location": {"landing_page_url": "https://repository.example/paper", "pdf_url": "https://repository.example/paper.pdf"},
+            "open_access": {"is_oa": True},
+            "is_retracted": False,
+            "cited_by_count": 2,
+        }
+        paper = parse_openalex_work(work)
+        self.assertIsNotNone(paper)
+        self.assertEqual(paper.abstract, "An abstract")
+        self.assertTrue(paper.is_oa)
+        self.assertEqual(paper.pdf_url, "https://repository.example/paper.pdf")
+
+    def test_crossref_client_builds_incremental_query(self):
+        session = FakeSession([FakeResponse({"message": {"items": [], "next-cursor": "next"}})])
+        client = CrossrefClient(mailto="me@example.com", session=session)
+        papers = client.fetch_journal(
+            {"name": "A Journal", "issns": ["1234-5678"]},
+            datetime(2026, 7, 1, tzinfo=UTC),
+            datetime(2026, 7, 15, tzinfo=UTC),
+            rows=25,
+        )
+        self.assertEqual(papers, [])
+        _, kwargs = session.calls[0]
+        self.assertIn("from-created-date:2026-07-01", kwargs["params"]["filter"])
+        self.assertEqual(kwargs["params"]["mailto"], "me@example.com")
+        self.assertNotIn("cursor-max", kwargs["params"])
+
+    def test_crossref_skips_unknown_issn_alias(self):
+        session = FakeSession(
+            [
+                FakeResponse(status_code=404),
+                FakeResponse({"message": {"items": [], "next-cursor": "next"}}),
+            ]
+        )
+        client = CrossrefClient(session=session)
+        papers = client.fetch_journal(
+            {"name": "A Journal", "issns": ["0000-0000", "1234-5678"]},
+            datetime(2026, 7, 1, tzinfo=UTC),
+            datetime(2026, 7, 15, tzinfo=UTC),
+        )
+        self.assertEqual(papers, [])
+        self.assertEqual(len(session.calls), 2)
+        self.assertIn("1234-5678", session.calls[1][0])
+
+    def test_openalex_doi_lookup_uses_one_encoded_identifier(self):
+        session = FakeSession([FakeResponse({}, status_code=404)])
+        client = OpenAlexClient("key", session=session)
+        self.assertIsNone(client.get_by_doi("10.1000/ABC"))
+        url, kwargs = session.calls[0]
+        self.assertIn("https%3A%2F%2Fdoi.org%2F10.1000%2Fabc", url)
+        self.assertEqual(kwargs["params"]["api_key"], "key")
+
+    def test_rss_fetch_uses_timeout_and_parses_item(self):
+        xml = b"""<?xml version='1.0' encoding='UTF-8'?>
+        <rss version='2.0'><channel><title>Feed</title><item>
+        <title>Health inequality paper</title>
+        <link>https://doi.org/10.1000/rss</link>
+        <description>An abstract</description>
+        <pubDate>Wed, 15 Jul 2026 10:00:00 GMT</pubDate>
+        </item></channel></rss>"""
+        session = FakeSession([FakeResponse(content=xml)])
+        papers = fetch_feed(
+            {"name": "Feed", "url": "https://example.org/feed.xml"},
+            datetime(2026, 7, 1, tzinfo=UTC),
+            session=session,
+        )
+        self.assertEqual(len(papers), 1)
+        self.assertEqual(papers[0].doi, "10.1000/rss")
+        self.assertEqual(session.calls[0][1]["timeout"], 30)
+
+
+if __name__ == "__main__":
+    unittest.main()

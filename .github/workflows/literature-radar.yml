@@ -1,0 +1,93 @@
+name: Sociology & Demography Literature Radar
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "只生成报告，不发邮件、不更新去重状态"
+        required: true
+        default: true
+        type: boolean
+  schedule:
+    # 默认每周一 09:17（北京时间）。避开整点可减少队列延迟。
+    - cron: "17 9 * * 1"
+      timezone: "Asia/Shanghai"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: literature-radar
+  cancel-in-progress: false
+
+jobs:
+  radar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install
+        run: python -m pip install --disable-pip-version-check -e .
+
+      - name: Validate config
+        run: python -m socdem_radar --config-dir config validate
+
+      - name: Run radar
+        env:
+          CROSSREF_MAILTO: ${{ secrets.CROSSREF_MAILTO }}
+          OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
+          SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          SMTP_FROM: ${{ secrets.SMTP_FROM }}
+          EMAIL_TO: ${{ secrets.EMAIL_TO }}
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+          LLM_MODEL: ${{ secrets.LLM_MODEL }}
+          MANUAL_DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || false }}
+        shell: bash
+        run: |
+          args=()
+          if [[ "$MANUAL_DRY_RUN" == "true" ]]; then
+            args+=("--dry-run")
+          fi
+          python -m socdem_radar --config-dir config run "${args[@]}"
+
+      - name: Add digest to job summary
+        if: always()
+        shell: bash
+        run: |
+          if [[ -f outputs/latest.md ]]; then
+            cat outputs/latest.md >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Upload digest preview
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: literature-radar-preview
+          path: |
+            outputs/latest.md
+            outputs/latest.html
+            outputs/latest.json
+          if-no-files-found: ignore
+          retention-days: 14
+
+      - name: Persist deduplication state
+        if: ${{ success() && !(github.event_name == 'workflow_dispatch' && inputs.dry_run) }}
+        shell: bash
+        run: |
+          if git diff --quiet -- data/state.json; then
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/state.json
+          git commit -m "chore: update literature radar state"
+          git push

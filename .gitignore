@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv*/
+.env
+.secrets/
+outputs/*
+!outputs/.gitkeep
+.coverage
+.pytest_cache/
+.artifact_tmp/
+.DS_Store

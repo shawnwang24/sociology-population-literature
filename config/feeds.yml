@@ -1,0 +1,8 @@
+feeds:
+  # RSS 适合 Online First / Early View。不同出版社链接会变化，启用前请先在浏览器中确认。
+  - name: "示例 RSS"
+    enabled: false
+    journal: "示例期刊"
+    url: "https://example.org/journal/feed.xml"
+    priority: 1
+
