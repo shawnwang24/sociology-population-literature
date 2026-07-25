@@ -1,5 +1,5 @@
 {
-  "last_success_at": "2026-07-25T09:14:25.091474Z",
+  "last_success_at": "2026-07-25T14:21:31.208043Z",
   "seen": {
     "doi:10.1002/psp.70325": {
       "doi": "10.1002/psp.70325",
@@ -65,6 +65,11 @@
       "doi": "10.3982/ecta23358",
       "sent_at": "2026-07-25T09:14:25.091474Z",
       "title": "The Class Gap in Career Progression: Evidence From U.S. Academia"
+    },
+    "title:555deb5756b2620caa2ef1ac": {
+      "doi": "",
+      "sent_at": "2026-07-25T14:21:31.208043Z",
+      "title": "流动人口社会融入的动力机制、非线性逻辑与系统特征——基于可解释机器学习算法的实证分析"
     }
   },
   "version": 1
