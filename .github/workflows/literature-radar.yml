@@ -9,9 +9,8 @@ on:
         default: true
         type: boolean
   schedule:
-    # 默认每周一 09:17（北京时间）。避开整点可减少队列延迟。
-    - cron: "17 9 * * 1"
-      timezone: "Asia/Shanghai"
+    # 每周一北京时间 09:17（UTC 01:17）。避开整点可减少队列延迟。
+    - cron: "17 1 * * 1"
 
 permissions:
   contents: write
