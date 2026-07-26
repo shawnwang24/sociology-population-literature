@@ -1472,7 +1472,8 @@ journals:
   impact_factor: 1.2
   catalog_source: https://ooir.org/journals.php
 - name: 世界经济
-  enabled: false
+  enabled: true
+  ncpssd_code: 92713X
   language: zh-CN
   disciplines:
   - 经济学
@@ -1485,7 +1486,8 @@ journals:
   catalog_source: https://cssrac.nju.edu.cn/cpzx/zwshkxywsy/index.html
   monitoring_note: 已纳入完整核心目录；待补充稳定 RSS、公开 API 或期刊官网适配器后启用。
 - name: 世界经济文汇
-  enabled: false
+  enabled: true
+  ncpssd_code: 92539X
   language: zh-CN
   disciplines:
   - 经济学
@@ -1498,7 +1500,8 @@ journals:
   catalog_source: https://cssrac.nju.edu.cn/cpzx/zwshkxywsy/index.html
   monitoring_note: 已纳入完整核心目录；待补充稳定 RSS、公开 API 或期刊官网适配器后启用。
 - name: 中国农村经济
-  enabled: false
+  enabled: true
+  ncpssd_code: 94178X
   language: zh-CN
   disciplines:
   - 经济学
@@ -1511,7 +1514,8 @@ journals:
   catalog_source: https://cssrac.nju.edu.cn/cpzx/zwshkxywsy/index.html
   monitoring_note: 已纳入完整核心目录；待补充稳定 RSS、公开 API 或期刊官网适配器后启用。
 - name: 中国工业经济
-  enabled: false
+  enabled: true
+  ncpssd_code: 93800A
   language: zh-CN
   disciplines:
   - 经济学
@@ -1524,7 +1528,8 @@ journals:
   catalog_source: https://cssrac.nju.edu.cn/cpzx/zwshkxywsy/index.html
   monitoring_note: 已纳入完整核心目录；待补充稳定 RSS、公开 API 或期刊官网适配器后启用。
 - name: 中国经济问题
-  enabled: false
+  enabled: true
+  ncpssd_code: 90744X
   language: zh-CN
   disciplines:
   - 经济学
@@ -1537,7 +1542,8 @@ journals:
   catalog_source: https://cssrac.nju.edu.cn/cpzx/zwshkxywsy/index.html
   monitoring_note: 已纳入完整核心目录；待补充稳定 RSS、公开 API 或期刊官网适配器后启用。
 - name: 产业经济研究
-  enabled: false
+  enabled: true
+  ncpssd_code: 82827B
   language: zh-CN
   disciplines:
   - 经济学
@@ -1550,7 +1556,8 @@ journals:
   catalog_source: https://cssrac.nju.edu.cn/cpzx/zwshkxywsy/index.html
   monitoring_note: 已纳入完整核心目录；待补充稳定 RSS、公开 API 或期刊官网适配器后启用。
 - name: 农业技术经济
-  enabled: false
+  enabled: true
+  ncpssd_code: 90329X
   language: zh-CN
   disciplines:
   - 经济学
@@ -1563,7 +1570,8 @@ journals:
   catalog_source: https://cssrac.nju.edu.cn/cpzx/zwshkxywsy/index.html
   monitoring_note: 已纳入完整核心目录；待补充稳定 RSS、公开 API 或期刊官网适配器后启用。
 - name: 农业经济问题
-  enabled: false
+  enabled: true
+  ncpssd_code: 96316X
   language: zh-CN
   disciplines:
   - 经济学
@@ -1589,7 +1597,8 @@ journals:
   catalog_source: https://cssrac.nju.edu.cn/cpzx/zwshkxywsy/index.html
   monitoring_note: 已纳入完整核心目录；待补充稳定 RSS、公开 API 或期刊官网适配器后启用。
 - name: 劳动经济研究
-  enabled: false
+  enabled: true
+  ncpssd_code: 60089X
   language: zh-CN
   disciplines:
   - 经济学
@@ -1602,7 +1611,8 @@ journals:
   catalog_source: https://cssrac.nju.edu.cn/cpzx/zwshkxywsy/index.html
   monitoring_note: 已纳入完整核心目录；待补充稳定 RSS、公开 API 或期刊官网适配器后启用。
 - name: 南开经济研究
-  enabled: false
+  enabled: true
+  ncpssd_code: 96678X
   language: zh-CN
   disciplines:
   - 经济学
@@ -1615,7 +1625,8 @@ journals:
   catalog_source: https://cssrac.nju.edu.cn/cpzx/zwshkxywsy/index.html
   monitoring_note: 已纳入完整核心目录；待补充稳定 RSS、公开 API 或期刊官网适配器后启用。
 - name: 南方经济
-  enabled: false
+  enabled: true
+  ncpssd_code: 90883X
   language: zh-CN
   disciplines:
   - 经济学
@@ -1628,7 +1639,8 @@ journals:
   catalog_source: https://cssrac.nju.edu.cn/cpzx/zwshkxywsy/index.html
   monitoring_note: 已纳入完整核心目录；待补充稳定 RSS、公开 API 或期刊官网适配器后启用。
 - name: 国际经济评论
-  enabled: false
+  enabled: true
+  ncpssd_code: 90440X
   language: zh-CN
   disciplines:
   - 经济学
@@ -1641,7 +1653,8 @@ journals:
   catalog_source: https://cssrac.nju.edu.cn/cpzx/zwshkxywsy/index.html
   monitoring_note: 已纳入完整核心目录；待补充稳定 RSS、公开 API 或期刊官网适配器后启用。
 - name: 国际金融研究
-  enabled: false
+  enabled: true
+  ncpssd_code: 98100X
   language: zh-CN
   disciplines:
   - 经济学
@@ -1654,7 +1667,8 @@ journals:
   catalog_source: https://cssrac.nju.edu.cn/cpzx/zwshkxywsy/index.html
   monitoring_note: 已纳入完整核心目录；待补充稳定 RSS、公开 API 或期刊官网适配器后启用。
 - name: 宏观经济研究
-  enabled: false
+  enabled: true
+  ncpssd_code: 96811B
   language: zh-CN
   disciplines:
   - 经济学
@@ -1667,7 +1681,8 @@ journals:
   catalog_source: https://cssrac.nju.edu.cn/cpzx/zwshkxywsy/index.html
   monitoring_note: 已纳入完整核心目录；待补充稳定 RSS、公开 API 或期刊官网适配器后启用。
 - name: 当代经济科学
-  enabled: false
+  enabled: true
+  ncpssd_code: 96310X
   language: zh-CN
   disciplines:
   - 经济学
@@ -1680,7 +1695,8 @@ journals:
   catalog_source: https://cssrac.nju.edu.cn/cpzx/zwshkxywsy/index.html
   monitoring_note: 已纳入完整核心目录；待补充稳定 RSS、公开 API 或期刊官网适配器后启用。
 - name: 改革
-  enabled: false
+  enabled: true
+  ncpssd_code: 94534X
   language: zh-CN
   disciplines:
   - 经济学
@@ -1693,7 +1709,8 @@ journals:
   catalog_source: https://cssrac.nju.edu.cn/cpzx/zwshkxywsy/index.html
   monitoring_note: 已纳入完整核心目录；待补充稳定 RSS、公开 API 或期刊官网适配器后启用。
 - name: 数量经济技术经济研究
-  enabled: false
+  enabled: true
+  ncpssd_code: 94503X
   language: zh-CN
   disciplines:
   - 经济学
@@ -1706,7 +1723,8 @@ journals:
   catalog_source: https://cssrac.nju.edu.cn/cpzx/zwshkxywsy/index.html
   monitoring_note: 已纳入完整核心目录；待补充稳定 RSS、公开 API 或期刊官网适配器后启用。
 - name: 管理世界
-  enabled: false
+  enabled: true
+  ncpssd_code: 95499X
   language: zh-CN
   disciplines:
   - 经济学
@@ -1719,7 +1737,8 @@ journals:
   catalog_source: https://cssrac.nju.edu.cn/cpzx/zwshkxywsy/index.html
   monitoring_note: 已纳入完整核心目录；待补充稳定 RSS、公开 API 或期刊官网适配器后启用。
 - name: 经济学（季刊）
-  enabled: false
+  enabled: true
+  ncpssd_code: 84307X
   language: zh-CN
   disciplines:
   - 经济学
@@ -1732,7 +1751,8 @@ journals:
   catalog_source: https://cssrac.nju.edu.cn/cpzx/zwshkxywsy/index.html
   monitoring_note: 已纳入完整核心目录；待补充稳定 RSS、公开 API 或期刊官网适配器后启用。
 - name: 经济学动态
-  enabled: false
+  enabled: true
+  ncpssd_code: 93743X
   language: zh-CN
   disciplines:
   - 经济学
@@ -1745,7 +1765,8 @@ journals:
   catalog_source: https://cssrac.nju.edu.cn/cpzx/zwshkxywsy/index.html
   monitoring_note: 已纳入完整核心目录；待补充稳定 RSS、公开 API 或期刊官网适配器后启用。
 - name: 经济理论与经济管理
-  enabled: false
+  enabled: true
+  ncpssd_code: 95590X
   language: zh-CN
   disciplines:
   - 经济学
@@ -1758,7 +1779,8 @@ journals:
   catalog_source: https://cssrac.nju.edu.cn/cpzx/zwshkxywsy/index.html
   monitoring_note: 已纳入完整核心目录；待补充稳定 RSS、公开 API 或期刊官网适配器后启用。
 - name: 经济研究
-  enabled: false
+  enabled: true
+  ncpssd_code: 95645X
   language: zh-CN
   disciplines:
   - 经济学
@@ -1771,7 +1793,8 @@ journals:
   catalog_source: https://cssrac.nju.edu.cn/cpzx/zwshkxywsy/index.html
   monitoring_note: 已纳入完整核心目录；待补充稳定 RSS、公开 API 或期刊官网适配器后启用。
 - name: 经济社会体制比较
-  enabled: false
+  enabled: true
+  ncpssd_code: 93736X
   language: zh-CN
   disciplines:
   - 经济学
@@ -1784,7 +1807,8 @@ journals:
   catalog_source: https://cssrac.nju.edu.cn/cpzx/zwshkxywsy/index.html
   monitoring_note: 已纳入完整核心目录；待补充稳定 RSS、公开 API 或期刊官网适配器后启用。
 - name: 经济科学
-  enabled: false
+  enabled: true
+  ncpssd_code: 95614X
   language: zh-CN
   disciplines:
   - 经济学
@@ -1797,7 +1821,8 @@ journals:
   catalog_source: https://cssrac.nju.edu.cn/cpzx/zwshkxywsy/index.html
   monitoring_note: 已纳入完整核心目录；待补充稳定 RSS、公开 API 或期刊官网适配器后启用。
 - name: 经济评论
-  enabled: false
+  enabled: true
+  ncpssd_code: 82170X
   language: zh-CN
   disciplines:
   - 经济学
@@ -1810,7 +1835,8 @@ journals:
   catalog_source: https://cssrac.nju.edu.cn/cpzx/zwshkxywsy/index.html
   monitoring_note: 已纳入完整核心目录；待补充稳定 RSS、公开 API 或期刊官网适配器后启用。
 - name: 财经研究
-  enabled: false
+  enabled: true
+  ncpssd_code: 96218X
   language: zh-CN
   disciplines:
   - 经济学
@@ -1823,7 +1849,8 @@ journals:
   catalog_source: https://cssrac.nju.edu.cn/cpzx/zwshkxywsy/index.html
   monitoring_note: 已纳入完整核心目录；待补充稳定 RSS、公开 API 或期刊官网适配器后启用。
 - name: 财贸经济
-  enabled: false
+  enabled: true
+  ncpssd_code: 96197X
   language: zh-CN
   disciplines:
   - 经济学
@@ -1836,7 +1863,8 @@ journals:
   catalog_source: https://cssrac.nju.edu.cn/cpzx/zwshkxywsy/index.html
   monitoring_note: 已纳入完整核心目录；待补充稳定 RSS、公开 API 或期刊官网适配器后启用。
 - name: 金融研究
-  enabled: false
+  enabled: true
+  ncpssd_code: 97926X
   language: zh-CN
   disciplines:
   - 经济学
@@ -1863,7 +1891,8 @@ journals:
   catalog_source: https://cssrac.nju.edu.cn/cpzx/zwshkxywsy/index.html
   monitoring_note: 已启用编辑部官网当期目录；抓取标题、作者、发布日期和中文摘要。
 - name: 中国人口科学
-  enabled: false
+  enabled: true
+  ncpssd_code: 97725X
   language: zh-CN
   disciplines:
   - 人口学
@@ -1876,7 +1905,8 @@ journals:
   catalog_source: https://cssrac.nju.edu.cn/cpzx/zwshkxywsy/index.html
   monitoring_note: 已纳入完整核心目录；知网 RSS 在 GitHub Actions 无法解析域名，待接入可达官网来源后启用。
 - name: 人口与发展
-  enabled: false
+  enabled: true
+  ncpssd_code: 90419A
   language: zh-CN
   disciplines:
   - 人口学
@@ -1889,7 +1919,8 @@ journals:
   catalog_source: https://cssrac.nju.edu.cn/cpzx/zwshkxywsy/index.html
   monitoring_note: 已纳入完整核心目录；知网 RSS 在 GitHub Actions 无法解析域名，待接入可达官网来源后启用。
 - name: 人口与经济
-  enabled: false
+  enabled: true
+  ncpssd_code: 95683X
   language: zh-CN
   disciplines:
   - 人口学
@@ -1902,7 +1933,8 @@ journals:
   catalog_source: https://cssrac.nju.edu.cn/cpzx/zwshkxywsy/index.html
   monitoring_note: 已纳入完整核心目录；知网 RSS 在 GitHub Actions 无法解析域名，待接入可达官网来源后启用。
 - name: 人口学刊
-  enabled: false
+  enabled: true
+  ncpssd_code: 91708X
   language: zh-CN
   disciplines:
   - 人口学
@@ -1928,7 +1960,8 @@ journals:
   catalog_source: https://cssrac.nju.edu.cn/cpzx/zwshkxywsy/index.html
   monitoring_note: 已纳入完整核心目录；知网 RSS 在 GitHub Actions 无法解析域名，待接入可达官网来源后启用。
 - name: 西北人口
-  enabled: false
+  enabled: true
+  ncpssd_code: 96477X
   language: zh-CN
   disciplines:
   - 人口学
@@ -1941,7 +1974,8 @@ journals:
   catalog_source: https://cssrac.nju.edu.cn/cpzx/zwshkxywsy/index.html
   monitoring_note: 已纳入完整核心目录；知网 RSS 在 GitHub Actions 无法解析域名，待接入可达官网来源后启用。
 - name: 社会学研究
-  enabled: false
+  enabled: true
+  ncpssd_code: 80772X
   language: zh-CN
   disciplines:
   - 社会学
@@ -1954,7 +1988,8 @@ journals:
   catalog_source: https://cssrac.nju.edu.cn/cpzx/zwshkxywsy/index.html
   monitoring_note: 已纳入完整核心目录；知网 RSS 在 GitHub Actions 无法解析域名，待接入可达官网来源后启用。
 - name: 中国青年研究
-  enabled: false
+  enabled: true
+  ncpssd_code: 82199X
   language: zh-CN
   disciplines:
   - 社会学
@@ -1967,7 +2002,8 @@ journals:
   catalog_source: https://cssrac.nju.edu.cn/cpzx/zwshkxywsy/index.html
   monitoring_note: 已纳入完整核心目录；知网 RSS 在 GitHub Actions 无法解析域名，待接入可达官网来源后启用。
 - name: 妇女研究论丛
-  enabled: false
+  enabled: true
+  ncpssd_code: 82596X
   language: zh-CN
   disciplines:
   - 社会学
@@ -1980,7 +2016,8 @@ journals:
   catalog_source: https://cssrac.nju.edu.cn/cpzx/zwshkxywsy/index.html
   monitoring_note: 已纳入完整核心目录；知网 RSS 在 GitHub Actions 无法解析域名，待接入可达官网来源后启用。
 - name: 学海
-  enabled: false
+  enabled: true
+  ncpssd_code: 82201X
   language: zh-CN
   disciplines:
   - 社会学
@@ -1993,7 +2030,8 @@ journals:
   catalog_source: https://cssrac.nju.edu.cn/cpzx/zwshkxywsy/index.html
   monitoring_note: 已纳入完整核心目录；知网 RSS 在 GitHub Actions 无法解析域名，待接入可达官网来源后启用。
 - name: 开放时代
-  enabled: false
+  enabled: true
+  ncpssd_code: 81581X
   language: zh-CN
   disciplines:
   - 社会学
@@ -2006,7 +2044,8 @@ journals:
   catalog_source: https://cssrac.nju.edu.cn/cpzx/zwshkxywsy/index.html
   monitoring_note: 已纳入完整核心目录；知网 RSS 在 GitHub Actions 无法解析域名，待接入可达官网来源后启用。
 - name: 探索与争鸣
-  enabled: false
+  enabled: true
+  ncpssd_code: 97673X
   language: zh-CN
   disciplines:
   - 社会学
@@ -2047,7 +2086,8 @@ journals:
   catalog_source: https://cssrac.nju.edu.cn/cpzx/zwshkxywsy/index.html
   monitoring_note: 已启用编辑部官网当期目录；抓取标题、作者、发布日期和中文摘要。
 - name: 社会建设
-  enabled: false
+  enabled: true
+  ncpssd_code: 72016X
   language: zh-CN
   disciplines:
   - 社会学
@@ -2060,7 +2100,8 @@ journals:
   catalog_source: https://cssrac.nju.edu.cn/cpzx/zwshkxywsy/index.html
   monitoring_note: 已纳入完整核心目录；知网 RSS 在 GitHub Actions 无法解析域名，待接入可达官网来源后启用。
 - name: 青年研究
-  enabled: false
+  enabled: true
+  ncpssd_code: 80985X
   language: zh-CN
   disciplines:
   - 社会学

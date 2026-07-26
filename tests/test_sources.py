@@ -3,6 +3,7 @@ from datetime import UTC, datetime
 
 from socdem_radar.sources.crossref import CrossrefClient, parse_crossref_item
 from socdem_radar.sources.magtech import parse_magtech_current
+from socdem_radar.sources.ncpssd import parse_article_metadata, parse_journal_page
 from socdem_radar.sources.openalex import OpenAlexClient, parse_openalex_work, reconstruct_abstract
 from socdem_radar.sources.rss import fetch_feed
 
@@ -32,6 +33,58 @@ class FakeSession:
 
 
 class SourceParsingTests(unittest.TestCase):
+    def test_parse_ncpssd_journal_page(self):
+        html = """
+        <div class="catalog">
+          <h2>2026年 第3期</h2>
+          <a onclick="openDetail('/Literature/articleinfo?id=LDJJYJ2026003004&amp;type=journalArticle')"
+             title="劳动力流动、配置效率红利与县域经济增长">文章</a>
+        </div>
+        """
+        papers = parse_journal_page(
+            html,
+            {"name": "劳动经济研究", "ncpssd_code": "60089X"},
+            "https://m.ncpssd.cn/journal/details?gch=60089X",
+            journal_priority=2,
+        )
+        self.assertEqual(len(papers), 1)
+        self.assertEqual(papers[0].source_id, "LDJJYJ2026003004")
+        self.assertEqual(papers[0].metadata["issue"], "2026年 第3期")
+        self.assertEqual(papers[0].metadata["journal_priority"], 2)
+
+    def test_parse_ncpssd_article_metadata(self):
+        paper = parse_journal_page(
+            """
+            <h2>2026年 第3期</h2>
+            <a onclick="openDetail('/Literature/articleinfo?id=LDJJYJ2026003004&amp;type=journalArticle')"
+               title="目录标题">文章</a>
+            """,
+            {"name": "劳动经济研究", "ncpssd_code": "60089X"},
+            "https://m.ncpssd.cn/journal/details?gch=60089X",
+        )[0]
+        parse_article_metadata(
+            {
+                "data": {
+                    "titlec": "劳动力流动、配置效率红利与县域经济增长",
+                    "mediac": "劳动经济研究",
+                    "keywordc": "劳动力流动;县域经济增长",
+                    "remarkc": "这是一段中文摘要。",
+                    "showwriter": "句国艳[1];匡国静[2]",
+                    "publishdate": "2026-06-15",
+                    "issn": "2095-6703",
+                    "beginpage": "55",
+                    "endpage": "89",
+                    "gch": "60089X",
+                }
+            },
+            paper,
+        )
+        self.assertEqual(paper.authors, ["句国艳", "匡国静"])
+        self.assertEqual(paper.abstract, "这是一段中文摘要。")
+        self.assertEqual(paper.keywords, ["劳动力流动", "县域经济增长"])
+        self.assertEqual(paper.published_at, "2026-06-15")
+        self.assertEqual(paper.metadata["pages"], "55-89")
+
     def test_reconstruct_openalex_abstract(self):
         index = {"Health": [0], "inequality": [1], "matters": [2]}
         self.assertEqual(reconstruct_abstract(index), "Health inequality matters")

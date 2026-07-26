@@ -43,6 +43,7 @@ class PipelineTests(unittest.TestCase):
             config["sources"]["openalex"]["enabled"] = False
             config["sources"]["rss"]["enabled"] = False
             config["sources"]["magtech"]["enabled"] = False
+            config["sources"]["ncpssd"]["enabled"] = False
             now = datetime(2026, 7, 15, 12, tzinfo=UTC)
             with patch("socdem_radar.pipeline.CrossrefClient", FakeCrossrefClient):
                 first = run_pipeline(config, dry_run=False, now=now)
