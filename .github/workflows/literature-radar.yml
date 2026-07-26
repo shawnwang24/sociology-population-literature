@@ -9,8 +9,8 @@ on:
         default: true
         type: boolean
   schedule:
-    # 每周一北京时间 09:17（UTC 01:17）。避开整点可减少队列延迟。
-    - cron: "17 1 * * 1"
+    # 每周日北京时间 14:00（UTC 06:00）。
+    - cron: "0 6 * * 0"
 
 permissions:
   contents: write
