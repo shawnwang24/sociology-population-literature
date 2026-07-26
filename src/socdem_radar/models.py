@@ -47,6 +47,28 @@ class SourceReport:
     ok: bool
     paper_count: int = 0
     error: str = ""
+    source_type: str = ""
+    journal: str = ""
+    health_group: str = ""
+    track_health: bool = True
+    consecutive_failures: int = 0
+    warning: str = ""
+
+
+@dataclass
+class HealthStatus:
+    total_sources: int = 0
+    successful_sources: int = 0
+    failed_sources: int = 0
+    failed_names: list[str] = field(default_factory=list)
+    chinese_total: int = 0
+    chinese_successful: int = 0
+    chinese_success_rate: float = 1.0
+    warnings: list[str] = field(default_factory=list)
+    errors: list[str] = field(default_factory=list)
+
+    def to_dict(self) -> dict[str, Any]:
+        return asdict(self)
 
 
 @dataclass
@@ -57,7 +79,7 @@ class RunResult:
     unique_count: int
     selected: list[Paper]
     source_reports: list[SourceReport]
+    health_status: HealthStatus
     dry_run: bool
     emailed: bool
     output_files: list[str] = field(default_factory=list)
-

@@ -13,7 +13,7 @@ from .utils import iso_z, paper_key, utc_now
 def load_state(path: str | Path) -> dict[str, Any]:
     state_path = Path(path)
     if not state_path.exists():
-        return {"version": 1, "last_success_at": None, "seen": {}}
+        return {"version": 1, "last_success_at": None, "seen": {}, "source_health": {}}
     try:
         with state_path.open("r", encoding="utf-8") as handle:
             state = json.load(handle)
@@ -22,6 +22,7 @@ def load_state(path: str | Path) -> dict[str, Any]:
     state.setdefault("version", 1)
     state.setdefault("last_success_at", None)
     state.setdefault("seen", {})
+    state.setdefault("source_health", {})
     return state
 
 

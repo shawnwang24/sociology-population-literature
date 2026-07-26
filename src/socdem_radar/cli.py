@@ -118,12 +118,15 @@ def main(argv: list[str] | None = None) -> None:
                         "unique": result.unique_count,
                         "selected": len(result.selected),
                         "emailed": result.emailed,
+                        "health": result.health_status.to_dict(),
                         "outputs": result.output_files,
                     },
                     ensure_ascii=False,
                     indent=2,
                 )
             )
+            if result.health_status.errors:
+                raise RuntimeError("；".join(result.health_status.errors))
             return
     except (ConfigError, EmailConfigError, ValueError, RuntimeError) as exc:
         logging.error("%s", exc)
@@ -134,4 +137,3 @@ def main(argv: list[str] | None = None) -> None:
 
 if __name__ == "__main__":
     main(sys.argv[1:])
-

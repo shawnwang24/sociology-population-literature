@@ -5,6 +5,8 @@ import tempfile
 import unittest
 from unittest.mock import patch
 
+import requests
+
 from socdem_radar.config import load_config
 from socdem_radar.models import Paper
 from socdem_radar.pipeline import run_pipeline
@@ -32,7 +34,82 @@ class FakeCrossrefClient:
         ]
 
 
+class EmptyCrossrefClient:
+    def __init__(self, *args, **kwargs):
+        pass
+
+    def fetch_journal(self, journal, start, end, rows=100, max_pages=3):
+        return []
+
+
+class FailingCrossrefClient:
+    def __init__(self, *args, **kwargs):
+        pass
+
+    def fetch_journal(self, journal, start, end, rows=100, max_pages=3):
+        raise requests.Timeout("simulated timeout")
+
+
 class PipelineTests(unittest.TestCase):
+    def test_all_sources_failed_sends_warning_report_and_returns_health_error(self):
+        base = load_config(ROOT / "config")
+        with tempfile.TemporaryDirectory() as directory:
+            config = deepcopy(base)
+            config["_project_root"] = directory
+            config["paths"] = {"state_file": "data/state.json", "output_dir": "outputs"}
+            config["journals"] = [
+                {
+                    "name": "Failing Journal",
+                    "enabled": True,
+                    "language": "en",
+                    "issns": ["1234-5678"],
+                }
+            ]
+            config["sources"]["openalex"]["enabled"] = False
+            config["sources"]["rss"]["enabled"] = False
+            config["sources"]["magtech"]["enabled"] = False
+            config["sources"]["ncpssd"]["enabled"] = False
+            with (
+                patch("socdem_radar.pipeline.CrossrefClient", FailingCrossrefClient),
+                patch("socdem_radar.pipeline.send_digest") as mocked_send,
+            ):
+                result = run_pipeline(
+                    config,
+                    dry_run=False,
+                    now=datetime(2026, 7, 15, 12, tzinfo=UTC),
+                )
+            self.assertIn("所有已启用数据源均读取失败", result.health_status.errors)
+            self.assertTrue(result.emailed)
+            mocked_send.assert_called_once()
+
+    def test_empty_successful_run_sends_heartbeat_email(self):
+        base = load_config(ROOT / "config")
+        with tempfile.TemporaryDirectory() as directory:
+            config = deepcopy(base)
+            config["_project_root"] = directory
+            config["paths"] = {"state_file": "data/state.json", "output_dir": "outputs"}
+            config["journals"] = [
+                {
+                    "name": "Heartbeat Journal",
+                    "enabled": True,
+                    "language": "en",
+                    "issns": ["1234-5678"],
+                }
+            ]
+            config["sources"]["openalex"]["enabled"] = False
+            config["sources"]["rss"]["enabled"] = False
+            config["sources"]["magtech"]["enabled"] = False
+            config["sources"]["ncpssd"]["enabled"] = False
+            now = datetime(2026, 7, 15, 12, tzinfo=UTC)
+            with (
+                patch("socdem_radar.pipeline.CrossrefClient", EmptyCrossrefClient),
+                patch("socdem_radar.pipeline.send_digest") as mocked_send,
+            ):
+                result = run_pipeline(config, dry_run=False, now=now)
+            self.assertEqual(result.selected, [])
+            self.assertTrue(result.emailed)
+            mocked_send.assert_called_once()
+
     def test_successful_run_persists_state_and_prevents_repeat(self):
         base = load_config(ROOT / "config")
         with tempfile.TemporaryDirectory() as directory:
