@@ -86,20 +86,18 @@ GitHub Secrets 不会写入配置文件；工作流只在运行时把它们注�
 
 ### 5. 自动运行
 
-默认工作流在每周一 `09:17 Asia/Taipei` 运行。修改 `.github/workflows/literature-radar.yml` 中的：
+默认工作流在每周日北京时间 `14:00` 运行。GitHub Actions 的 cron 使用 UTC，因此配置为：
 
 ```yaml
 schedule:
-  - cron: "17 9 * * 1"
-    timezone: "Asia/Taipei"
+  - cron: "0 6 * * 0"  # UTC 06:00 = 北京时间 14:00
 ```
 
 例如每天早上 08:23：
 
 ```yaml
 schedule:
-  - cron: "23 8 * * *"
-    timezone: "Asia/Taipei"
+  - cron: "23 0 * * *"  # UTC 00:23 = 北京时间 08:23
 ```
 
 定时工作流只从默认分支运行；GitHub Actions 的 cron 不是严格实时调度，繁忙时可能延迟。状态文件会在成功运行后由 Actions 自动提交回仓库，因此下一次能排除已推送论文。
