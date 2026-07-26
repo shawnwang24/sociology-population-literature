@@ -47,7 +47,7 @@ sources:
     - 社会学
 email:
   enabled: true
-  send_empty_digest: false
+  send_empty_digest: true
   sender_name: 社会学与人口学文献雷达
   subject_prefix: '[文献雷达]'
   smtp:
@@ -71,6 +71,9 @@ render:
   archive: true
 deduplication:
   retention_days: 730
+health:
+  chinese_min_success_rate: 0.9
+  consecutive_failure_warning: 2
 paths:
   state_file: data/state.json
   output_dir: outputs

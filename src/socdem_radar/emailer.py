@@ -8,7 +8,7 @@ from email.message import EmailMessage
 from email.utils import formataddr
 from typing import Any
 
-from .models import Paper, SourceReport
+from .models import HealthStatus, Paper, SourceReport
 from .render import render_html, render_markdown
 
 
@@ -28,6 +28,7 @@ def send_digest(
     source_reports: list[SourceReport],
     generated_at: datetime,
     config: dict[str, Any],
+    health_status: HealthStatus | None = None,
 ) -> None:
     email_config = config.get("email") or {}
     if not email_config.get("enabled", True):
@@ -47,14 +48,24 @@ def send_digest(
     use_starttls = bool(smtp_config.get("use_starttls", not use_ssl))
     sender_name = str(email_config.get("sender_name", "社会学与人口学文献雷达"))
     prefix = str(email_config.get("subject_prefix", "[文献雷达]"))
-    subject = f"{prefix} {generated_at.date().isoformat()}｜{len(papers)} 篇新论文"
+    status_label = ""
+    if health_status and health_status.errors:
+        status_label = "⚠️ 来源健康异常｜"
+    elif health_status and (health_status.warnings or health_status.failed_sources):
+        status_label = "⚠️ 来源警告｜"
+    elif not papers:
+        status_label = "运行成功｜"
+    subject = f"{prefix} {status_label}{generated_at.date().isoformat()}｜{len(papers)} 篇新论文"
 
     message = EmailMessage()
     message["Subject"] = subject
     message["From"] = formataddr((sender_name, sender))
     message["To"] = ", ".join(recipients)
-    message.set_content(render_markdown(papers, source_reports, generated_at, config))
-    message.add_alternative(render_html(papers, source_reports, generated_at, config), subtype="html")
+    message.set_content(render_markdown(papers, source_reports, generated_at, config, health_status))
+    message.add_alternative(
+        render_html(papers, source_reports, generated_at, config, health_status),
+        subtype="html",
+    )
 
     context = ssl.create_default_context()
     if use_ssl:
@@ -83,4 +94,3 @@ def send_test(config: dict[str, Any], now: datetime) -> None:
         matched_terms=["SMTP"],
     )
     send_digest([sample], [SourceReport(name="SMTP test", ok=True, paper_count=1)], now, config)
-

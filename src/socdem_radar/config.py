@@ -51,6 +51,13 @@ def validate_config(config: dict[str, Any]) -> None:
     if int(selection.get("max_papers", 0)) < 1:
         errors.append("selection.max_papers 必须至少为 1")
 
+    health = config.get("health") or {}
+    chinese_min_success_rate = float(health.get("chinese_min_success_rate", 0.9))
+    if not 0 <= chinese_min_success_rate <= 1:
+        errors.append("health.chinese_min_success_rate 必须在 0 到 1 之间")
+    if int(health.get("consecutive_failure_warning", 2)) < 1:
+        errors.append("health.consecutive_failure_warning 必须至少为 1")
+
     groups = (config.get("research_profile") or {}).get("groups") or []
     if not groups:
         errors.append("topics.yml 至少需要一个 research_profile.groups 主题组")

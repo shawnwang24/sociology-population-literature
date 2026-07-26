@@ -11,6 +11,7 @@ import requests
 from .config import enabled_sources
 from .dedupe import deduplicate
 from .emailer import send_digest
+from .health import evaluate_source_health
 from .models import Paper, RunResult, SourceReport
 from .render import write_outputs
 from .scoring import rank_papers, score_paper
@@ -32,14 +33,38 @@ def _resolve_path(project_root: Path, value: str, default: str) -> Path:
     return path if path.is_absolute() else project_root / path
 
 
-def _safe_fetch(name: str, callback: Callable[[], list[Paper]]) -> tuple[list[Paper], SourceReport]:
+def _safe_fetch(
+    name: str,
+    callback: Callable[[], list[Paper]],
+    *,
+    source_type: str = "",
+    journal: str = "",
+    health_group: str = "",
+    track_health: bool = True,
+) -> tuple[list[Paper], SourceReport]:
     try:
         papers = callback()
         LOGGER.info("%s: %s papers", name, len(papers))
-        return papers, SourceReport(name=name, ok=True, paper_count=len(papers))
+        return papers, SourceReport(
+            name=name,
+            ok=True,
+            paper_count=len(papers),
+            source_type=source_type,
+            journal=journal,
+            health_group=health_group,
+            track_health=track_health,
+        )
     except (requests.RequestException, ValueError, KeyError, TypeError) as exc:
         LOGGER.warning("%s failed: %s", name, exc)
-        return [], SourceReport(name=name, ok=False, error=str(exc)[:500])
+        return [], SourceReport(
+            name=name,
+            ok=False,
+            error=str(exc)[:500],
+            source_type=source_type,
+            journal=journal,
+            health_group=health_group,
+            track_health=track_health,
+        )
 
 
 def _journal_by_feed(config: dict[str, Any]) -> list[tuple[dict[str, Any], float]]:
@@ -97,6 +122,8 @@ def run_pipeline(config: dict[str, Any], dry_run: bool = False, now=None) -> Run
                     rows=int(crossref_cfg.get("rows_per_journal", 100)),
                     max_pages=int(crossref_cfg.get("max_pages_per_journal", 3)),
                 ),
+                source_type="Crossref",
+                journal=str(journal.get("name", "")),
             )
             all_papers.extend(papers)
             reports.append(report)
@@ -114,6 +141,8 @@ def run_pipeline(config: dict[str, Any], dry_run: bool = False, now=None) -> Run
                     priority,
                     timeout=rss_timeout,
                 ),
+                source_type="RSS",
+                journal=str(feed.get("journal") or feed.get("name", "")),
             )
             all_papers.extend(papers)
             reports.append(report)
@@ -134,6 +163,9 @@ def run_pipeline(config: dict[str, Any], dry_run: bool = False, now=None) -> Run
                     priority,
                     timeout=magtech_timeout,
                 ),
+                source_type="Magtech",
+                journal=str(journal.get("name", "")),
+                health_group="chinese_journal",
             )
             all_papers.extend(papers)
             reports.append(report)
@@ -155,11 +187,29 @@ def run_pipeline(config: dict[str, Any], dry_run: bool = False, now=None) -> Run
                 name = f"NCPSSD·{journal.get('name', 'unknown journal')}"
                 if error is not None:
                     LOGGER.warning("%s failed: %s", name, error)
-                    reports.append(SourceReport(name=name, ok=False, error=str(error)[:500]))
+                    reports.append(
+                        SourceReport(
+                            name=name,
+                            ok=False,
+                            error=str(error)[:500],
+                            source_type="NCPSSD",
+                            journal=str(journal.get("name", "")),
+                            health_group="chinese_journal",
+                        )
+                    )
                     continue
                 found = papers or []
                 all_papers.extend(found)
-                reports.append(SourceReport(name=name, ok=True, paper_count=len(found)))
+                reports.append(
+                    SourceReport(
+                        name=name,
+                        ok=True,
+                        paper_count=len(found),
+                        source_type="NCPSSD",
+                        journal=str(journal.get("name", "")),
+                        health_group="chinese_journal",
+                    )
+                )
 
     openalex_cfg = sources_config.get("openalex") or {}
     openalex_key = os.getenv(str(openalex_cfg.get("api_key_env", "OPENALEX_API_KEY")), "").strip()
@@ -175,15 +225,19 @@ def run_pipeline(config: dict[str, Any], dry_run: bool = False, now=None) -> Run
                     lambda query=query: openalex_client.discover(
                         str(query), start, end, per_page=int(openalex_cfg.get("discovery_results_per_query", 50))
                     ),
+                    source_type="OpenAlex discovery",
                 )
                 all_papers.extend(papers)
                 reports.append(report)
     elif openalex_cfg.get("enabled", True) and openalex_cfg.get("discovery_enabled", False):
-        reports.append(SourceReport(name="OpenAlex discovery", ok=False, error="缺少 OPENALEX_API_KEY"))
-
-    primary_reports = [report for report in reports if not report.name.startswith("OpenAlex enrichment")]
-    if primary_reports and not any(report.ok for report in primary_reports):
-        raise RuntimeError("所有已启用数据源均读取失败；为避免漏报，本次不会更新去重状态")
+        reports.append(
+            SourceReport(
+                name="OpenAlex discovery",
+                ok=False,
+                error="缺少 OPENALEX_API_KEY",
+                source_type="OpenAlex discovery",
+            )
+        )
 
     fetched_count = len(all_papers)
     unique = deduplicate(all_papers)
@@ -208,6 +262,8 @@ def run_pipeline(config: dict[str, Any], dry_run: bool = False, now=None) -> Run
                 ok=failed < len(detail_candidates) if detail_candidates else True,
                 paper_count=succeeded,
                 error=f"{failed} 篇详情读取失败" if failed else "",
+                source_type="NCPSSD enrichment",
+                track_health=False,
             )
         )
 
@@ -237,8 +293,22 @@ def run_pipeline(config: dict[str, Any], dry_run: bool = False, now=None) -> Run
                 ok=failures < attempted if attempted else True,
                 paper_count=max(0, attempted - failures),
                 error=f"{failures} 个 DOI 补全失败" if failures else "",
+                source_type="OpenAlex enrichment",
+                track_health=False,
             )
         )
+
+    health_cfg = config.get("health") or {}
+    health_status = evaluate_source_health(
+        state,
+        reports,
+        started_at,
+        chinese_min_success_rate=float(health_cfg.get("chinese_min_success_rate", 0.9)),
+        consecutive_failure_warning=int(health_cfg.get("consecutive_failure_warning", 2)),
+    )
+    primary_reports = [report for report in reports if report.track_health]
+    if primary_reports and not any(report.ok for report in primary_reports):
+        health_status.errors.append("所有已启用数据源均读取失败")
 
     scored = [score_paper(paper, config) for paper in unique]
     not_seen = unseen_papers(scored, state)
@@ -246,13 +316,13 @@ def run_pipeline(config: dict[str, Any], dry_run: bool = False, now=None) -> Run
 
     summarizer = OptionalSummarizer(config)
     summarizer.apply(selected)
-    output_files = write_outputs(output_dir, selected, reports, started_at, config)
+    output_files = write_outputs(output_dir, selected, reports, started_at, config, health_status)
 
     email_cfg = config.get("email") or {}
     should_send_empty = bool(email_cfg.get("send_empty_digest", False))
     emailed = False
     if not dry_run and email_cfg.get("enabled", True) and (selected or should_send_empty):
-        send_digest(selected, reports, started_at, config)
+        send_digest(selected, reports, started_at, config, health_status)
         emailed = True
 
     if not dry_run:
@@ -267,6 +337,7 @@ def run_pipeline(config: dict[str, Any], dry_run: bool = False, now=None) -> Run
         unique_count=len(unique),
         selected=selected,
         source_reports=reports,
+        health_status=health_status,
         dry_run=dry_run,
         emailed=emailed,
         output_files=output_files,

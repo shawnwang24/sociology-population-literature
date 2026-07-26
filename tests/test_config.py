@@ -31,6 +31,9 @@ class ConfigTests(unittest.TestCase):
         )
         self.assertIn("Magtech", enabled_sources(config))
         self.assertIn("NCPSSD", enabled_sources(config))
+        self.assertTrue(config["email"]["send_empty_digest"])
+        self.assertEqual(config["health"]["chinese_min_success_rate"], 0.9)
+        self.assertEqual(config["health"]["consecutive_failure_warning"], 2)
         by_name = {journal["name"]: journal for journal in journals}
         self.assertEqual(by_name["社会发展研究"]["ncpssd_code"], "72041X")
         self.assertEqual(by_name["中国社会科学"]["ncpssd_code"], "81908X")
