@@ -51,6 +51,16 @@ class FailingCrossrefClient:
         raise requests.Timeout("simulated timeout")
 
 
+class BacklogCrossrefClient:
+    papers: list[Paper] = []
+
+    def __init__(self, *args, **kwargs):
+        pass
+
+    def fetch_journal(self, journal, start, end, rows=100, max_pages=3):
+        return [deepcopy(paper) for paper in self.papers]
+
+
 class PipelineTests(unittest.TestCase):
     def test_all_sources_failed_sends_warning_report_and_returns_health_error(self):
         base = load_config(ROOT / "config")
@@ -159,6 +169,63 @@ class PipelineTests(unittest.TestCase):
             persisted = json.loads(state_path.read_text(encoding="utf-8"))
             self.assertEqual(persisted["seen"], {})
             self.assertEqual(persisted["last_success_at"], "2026-07-15T08:00:00Z")
+            self.assertEqual(len(persisted["pending"]), 1)
+
+    def test_unsent_backlog_is_delivered_after_it_leaves_source_window(self):
+        base = load_config(ROOT / "config")
+        with tempfile.TemporaryDirectory() as directory:
+            config = deepcopy(base)
+            config["_project_root"] = directory
+            config["paths"] = {"state_file": "data/state.json", "output_dir": "outputs"}
+            config["selection"]["max_papers"] = 2
+            config["selection"]["max_per_journal"] = 0
+            config["email"]["minimum_interval_hours"] = 0
+            config["pending_queue"] = {"retention_days": 180, "max_items": 10}
+            config["journals"] = [
+                {
+                    "name": "Backlog Journal",
+                    "enabled": True,
+                    "language": "en",
+                    "issns": ["1234-5678"],
+                }
+            ]
+            config["sources"]["openalex"]["enabled"] = False
+            config["sources"]["rss"]["enabled"] = False
+            config["sources"]["magtech"]["enabled"] = False
+            config["sources"]["ncpssd"]["enabled"] = False
+            BacklogCrossrefClient.papers = [
+                Paper(
+                    title=f"Health inequality and social class study {index}",
+                    doi=f"10.1000/backlog-{index}",
+                    journal="Backlog Journal",
+                    published_at="2026-07-15",
+                    abstract="Health inequality, occupational class and wellbeing in China.",
+                    source="Crossref",
+                    metadata={"journal_priority": 1},
+                )
+                for index in range(3)
+            ]
+            with (
+                patch("socdem_radar.pipeline.CrossrefClient", BacklogCrossrefClient),
+                patch("socdem_radar.pipeline.send_digest"),
+            ):
+                first = run_pipeline(
+                    config,
+                    dry_run=False,
+                    now=datetime(2026, 7, 15, 12, tzinfo=UTC),
+                )
+                BacklogCrossrefClient.papers = []
+                second = run_pipeline(
+                    config,
+                    dry_run=False,
+                    now=datetime(2026, 8, 15, 12, tzinfo=UTC),
+                )
+            self.assertEqual(len(first.selected), 2)
+            self.assertEqual(len(second.selected), 1)
+            state = json.loads(
+                (Path(directory) / "data" / "state.json").read_text(encoding="utf-8")
+            )
+            self.assertEqual(state["pending"], {})
 
 
 if __name__ == "__main__":

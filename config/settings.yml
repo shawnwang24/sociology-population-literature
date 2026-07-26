@@ -73,6 +73,9 @@ render:
   archive: true
 deduplication:
   retention_days: 730
+pending_queue:
+  retention_days: 180
+  max_items: 500
 health:
   chinese_min_success_rate: 0.9
   consecutive_failure_warning: 2

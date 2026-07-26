@@ -66,6 +66,8 @@ class HealthStatus:
     chinese_success_rate: float = 1.0
     warnings: list[str] = field(default_factory=list)
     errors: list[str] = field(default_factory=list)
+    pending_count: int = 0
+    pending_dropped: int = 0
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)

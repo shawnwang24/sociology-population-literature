@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import logging
 import os
+from copy import deepcopy
 from datetime import timedelta
 from pathlib import Path
 from typing import Any, Callable
@@ -18,7 +19,16 @@ from .sources.magtech import fetch_magtech_current
 from .sources.ncpssd import NCPSSDClient
 from .sources.openalex import OpenAlexClient
 from .sources.rss import fetch_feed
-from .state import load_state, mark_seen, save_state, sent_within, unseen_papers
+from .state import (
+    load_state,
+    mark_seen,
+    pending_papers,
+    remove_pending,
+    save_state,
+    sent_within,
+    unseen_papers,
+    update_pending,
+)
 from .summarizer import OptionalSummarizer
 from .utils import utc_now
 
@@ -308,9 +318,27 @@ def run_pipeline(config: dict[str, Any], dry_run: bool = False, now=None) -> Run
     if primary_reports and not any(report.ok for report in primary_reports):
         health_status.errors.append("所有已启用数据源均读取失败")
 
+    queue_cfg = config.get("pending_queue") or {}
+    queue_max_items = int(queue_cfg.get("max_items", 500))
+    queue_retention_days = int(queue_cfg.get("retention_days", 180))
+    pending_dropped = update_pending(
+        state,
+        [],
+        started_at,
+        retention_days=queue_retention_days,
+        max_items=queue_max_items,
+    )
     scored = [score_paper(paper, config) for paper in unique]
-    not_seen = unseen_papers(scored, state)
-    selected = rank_papers(not_seen, config)
+    combined = deduplicate([*pending_papers(state), *scored])
+    not_seen = unseen_papers(combined, state)
+    candidate_config = deepcopy(config)
+    candidate_config["selection"] = {
+        **(config.get("selection") or {}),
+        "max_papers": max(queue_max_items, len(not_seen), 1),
+        "max_per_journal": 0,
+    }
+    candidates = rank_papers(not_seen, candidate_config)
+    selected = rank_papers(candidates, config)
 
     summarizer = OptionalSummarizer(config)
     summarizer.apply(selected)
@@ -329,6 +357,25 @@ def run_pipeline(config: dict[str, Any], dry_run: bool = False, now=None) -> Run
             f"距上次成功发送不足 {minimum_interval_hours:g} 小时，本次仅记录运行结果，不重复发信"
         )
 
+    if not dry_run:
+        pending_dropped += update_pending(
+            state,
+            candidates,
+            started_at,
+            retention_days=queue_retention_days,
+            max_items=queue_max_items,
+            protected=selected,
+        )
+        pending_count = len(state.get("pending") or {})
+        will_send = (
+            not skipped_for_interval
+            and email_cfg.get("enabled", True)
+            and bool(selected or should_send_empty)
+        )
+        health_status.pending_count = max(0, pending_count - len(selected)) if will_send else pending_count
+        health_status.pending_dropped = pending_dropped
+        save_state(state_path, state)
+
     output_files = write_outputs(output_dir, selected, reports, started_at, config, health_status)
 
     emailed = False
@@ -345,6 +392,8 @@ def run_pipeline(config: dict[str, Any], dry_run: bool = False, now=None) -> Run
         if emailed or not email_cfg.get("enabled", True):
             retention_days = int((config.get("deduplication") or {}).get("retention_days", 730))
             mark_seen(state, selected, now=started_at, retention_days=retention_days)
+            remove_pending(state, selected)
+            health_status.pending_count = len(state.get("pending") or {})
         save_state(state_path, state)
 
     return RunResult(

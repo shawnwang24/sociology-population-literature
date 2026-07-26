@@ -9,9 +9,12 @@ from socdem_radar.state import (
     load_state,
     mark_seen,
     merge_states,
+    pending_papers,
+    remove_pending,
     save_state,
     sent_within,
     unseen_papers,
+    update_pending,
 )
 
 
@@ -74,6 +77,40 @@ class StateTests(unittest.TestCase):
         self.assertEqual(set(merged["seen"]), {"old", "new"})
         self.assertTrue(sent_within(merged, now, 12))
         self.assertFalse(sent_within(merged, now + timedelta(hours=13), 12))
+
+    def test_pending_queue_is_bounded_and_sent_items_are_removed(self):
+        now = datetime(2026, 7, 15, tzinfo=UTC)
+        state = load_state("missing-pending-state.json")
+        papers = [
+            Paper(title=f"Paper {index}", doi=f"10.1000/{index}", score=float(index))
+            for index in range(5)
+        ]
+        dropped = update_pending(state, papers, now, max_items=3, retention_days=180)
+        self.assertEqual(dropped, 2)
+        queued = pending_papers(state)
+        self.assertEqual({paper.title for paper in queued}, {"Paper 2", "Paper 3", "Paper 4"})
+        remove_pending(state, [Paper(title="Paper 4", doi="10.1000/4")])
+        self.assertEqual({paper.title for paper in pending_papers(state)}, {"Paper 2", "Paper 3"})
+        update_pending(
+            state,
+            [],
+            now + timedelta(days=181),
+            max_items=3,
+            retention_days=180,
+        )
+        self.assertEqual(pending_papers(state), [])
+
+    def test_state_merge_keeps_pending_papers_from_both_sides(self):
+        now = datetime(2026, 7, 15, tzinfo=UTC)
+        current = load_state("missing-current.json")
+        incoming = load_state("missing-incoming.json")
+        update_pending(current, [Paper(title="Current", doi="10.1000/current")], now)
+        update_pending(incoming, [Paper(title="Incoming", doi="10.1000/incoming")], now)
+        merged = merge_states(current, incoming)
+        self.assertEqual(
+            {paper.title for paper in pending_papers(merged)},
+            {"Current", "Incoming"},
+        )
 
 
 if __name__ == "__main__":

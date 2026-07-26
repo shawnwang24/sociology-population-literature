@@ -57,6 +57,12 @@ def validate_config(config: dict[str, Any]) -> None:
     if int(email.get("retry_attempts", 3)) < 1:
         errors.append("email.retry_attempts 必须至少为 1")
 
+    pending_queue = config.get("pending_queue") or {}
+    if int(pending_queue.get("retention_days", 180)) < 1:
+        errors.append("pending_queue.retention_days 必须至少为 1")
+    if int(pending_queue.get("max_items", 500)) < 1:
+        errors.append("pending_queue.max_items 必须至少为 1")
+
     health = config.get("health") or {}
     chinese_min_success_rate = float(health.get("chinese_min_success_rate", 0.9))
     if not 0 <= chinese_min_success_rate <= 1:

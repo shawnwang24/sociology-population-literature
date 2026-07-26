@@ -69,6 +69,12 @@ def render_markdown(
                 f"失败 {health_status.failed_sources}",
                 f"- 中文期刊：成功 {health_status.chinese_successful}/{health_status.chinese_total}，"
                 f"成功率 {health_status.chinese_success_rate:.1%}",
+                f"- 待发送队列：{health_status.pending_count} 篇"
+                + (
+                    f"（本次因容量或过期清理 {health_status.pending_dropped} 篇）"
+                    if health_status.pending_dropped
+                    else ""
+                ),
             ]
         )
     source_types = sorted({report.source_type for report in tracked if report.source_type})
@@ -152,7 +158,14 @@ def render_html(
             f"<p><b>全部来源：</b>成功 {health_status.successful_sources}/{health_status.total_sources}，"
             f"失败 {health_status.failed_sources}<br>"
             f"<b>中文期刊：</b>成功 {health_status.chinese_successful}/{health_status.chinese_total}，"
-            f"成功率 {health_status.chinese_success_rate:.1%}</p>"
+            f"成功率 {health_status.chinese_success_rate:.1%}<br>"
+            f"<b>待发送队列：</b>{health_status.pending_count} 篇"
+            + (
+                f"（本次因容量或过期清理 {health_status.pending_dropped} 篇）"
+                if health_status.pending_dropped
+                else ""
+            )
+            + "</p>"
         )
     failure_html = "<p><b>失败来源：</b>无</p>"
     if failed:

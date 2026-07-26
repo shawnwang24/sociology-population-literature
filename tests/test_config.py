@@ -32,6 +32,8 @@ class ConfigTests(unittest.TestCase):
         self.assertIn("Magtech", enabled_sources(config))
         self.assertIn("NCPSSD", enabled_sources(config))
         self.assertTrue(config["email"]["send_empty_digest"])
+        self.assertEqual(config["pending_queue"]["max_items"], 500)
+        self.assertEqual(config["pending_queue"]["retention_days"], 180)
         self.assertEqual(config["health"]["chinese_min_success_rate"], 0.9)
         self.assertEqual(config["health"]["consecutive_failure_warning"], 2)
         by_name = {journal["name"]: journal for journal in journals}
