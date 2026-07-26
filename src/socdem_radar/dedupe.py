@@ -35,8 +35,14 @@ def deduplicate(papers: list[Paper]) -> list[Paper]:
     by_key: dict[str, Paper] = {}
     title_aliases: dict[str, str] = {}
     for paper in papers:
-        exact_key = paper_key(paper.doi, paper.title, paper.authors)
-        title_key = paper_key("", paper.title, paper.authors)
+        exact_key = paper_key(
+            paper.doi,
+            paper.title,
+            paper.authors,
+            source_id=paper.source_id,
+            source=paper.source,
+        )
+        title_key = paper_key("", paper.title)
         known_key = title_aliases.get(title_key, exact_key)
         if known_key in by_key:
             by_key[known_key] = merge_papers(by_key[known_key], paper)

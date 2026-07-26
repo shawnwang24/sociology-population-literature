@@ -1,5 +1,6 @@
 from copy import deepcopy
 from datetime import UTC, datetime
+import json
 from pathlib import Path
 import tempfile
 import unittest
@@ -129,6 +130,35 @@ class PipelineTests(unittest.TestCase):
             self.assertEqual(len(second.selected), 0)
             self.assertTrue((Path(directory) / "data" / "state.json").exists())
             self.assertTrue((Path(directory) / "outputs" / "latest.html").exists())
+
+    def test_recent_success_skips_email_without_consuming_new_papers(self):
+        base = load_config(ROOT / "config")
+        with tempfile.TemporaryDirectory() as directory:
+            config = deepcopy(base)
+            config["_project_root"] = directory
+            config["paths"] = {"state_file": "data/state.json", "output_dir": "outputs"}
+            config["sources"]["openalex"]["enabled"] = False
+            config["sources"]["rss"]["enabled"] = False
+            config["sources"]["magtech"]["enabled"] = False
+            config["sources"]["ncpssd"]["enabled"] = False
+            state_path = Path(directory) / "data" / "state.json"
+            state_path.parent.mkdir(parents=True)
+            state_path.write_text(
+                '{"version":1,"last_success_at":"2026-07-15T08:00:00Z","seen":{},"source_health":{}}',
+                encoding="utf-8",
+            )
+            now = datetime(2026, 7, 15, 12, tzinfo=UTC)
+            with (
+                patch("socdem_radar.pipeline.CrossrefClient", FakeCrossrefClient),
+                patch("socdem_radar.pipeline.send_digest") as mocked_send,
+            ):
+                result = run_pipeline(config, dry_run=False, now=now)
+            self.assertEqual(len(result.selected), 1)
+            self.assertFalse(result.emailed)
+            mocked_send.assert_not_called()
+            persisted = json.loads(state_path.read_text(encoding="utf-8"))
+            self.assertEqual(persisted["seen"], {})
+            self.assertEqual(persisted["last_success_at"], "2026-07-15T08:00:00Z")
 
 
 if __name__ == "__main__":

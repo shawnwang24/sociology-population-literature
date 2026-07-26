@@ -48,6 +48,8 @@ sources:
 email:
   enabled: true
   send_empty_digest: true
+  minimum_interval_hours: 12
+  retry_attempts: 3
   sender_name: 社会学与人口学文献雷达
   subject_prefix: '[文献雷达]'
   smtp:

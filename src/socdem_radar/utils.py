@@ -57,10 +57,22 @@ def normalize_title(value: str) -> str:
     return SPACE_RE.sub(" ", value).strip()
 
 
-def paper_key(doi: str, title: str, authors: Iterable[str] = ()) -> str:
+def paper_key(
+    doi: str,
+    title: str,
+    authors: Iterable[str] = (),
+    *,
+    source_id: str = "",
+    source: str = "",
+) -> str:
     normalized_doi = normalize_doi(doi)
     if normalized_doi:
         return f"doi:{normalized_doi}"
+    normalized_source_id = clean_text(source_id).casefold()
+    if normalized_source_id:
+        source_name = clean_text(source).split(",", 1)[0].casefold()
+        digest = hashlib.sha256(f"{source_name}|{normalized_source_id}".encode("utf-8")).hexdigest()[:24]
+        return f"source:{digest}"
     identity = normalize_title(title)
     first_author = normalize_title(next(iter(authors), ""))
     digest = hashlib.sha256(f"{identity}|{first_author}".encode("utf-8")).hexdigest()[:24]

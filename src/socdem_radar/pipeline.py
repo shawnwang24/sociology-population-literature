@@ -6,8 +6,6 @@ from datetime import timedelta
 from pathlib import Path
 from typing import Any, Callable
 
-import requests
-
 from .config import enabled_sources
 from .dedupe import deduplicate
 from .emailer import send_digest
@@ -20,7 +18,7 @@ from .sources.magtech import fetch_magtech_current
 from .sources.ncpssd import NCPSSDClient
 from .sources.openalex import OpenAlexClient
 from .sources.rss import fetch_feed
-from .state import load_state, mark_seen, save_state, unseen_papers
+from .state import load_state, mark_seen, save_state, sent_within, unseen_papers
 from .summarizer import OptionalSummarizer
 from .utils import utc_now
 
@@ -54,8 +52,8 @@ def _safe_fetch(
             health_group=health_group,
             track_health=track_health,
         )
-    except (requests.RequestException, ValueError, KeyError, TypeError) as exc:
-        LOGGER.warning("%s failed: %s", name, exc)
+    except Exception as exc:
+        LOGGER.exception("%s failed: %s", name, exc)
         return [], SourceReport(
             name=name,
             ok=False,
@@ -284,9 +282,9 @@ def run_pipeline(config: dict[str, Any], dry_run: bool = False, now=None) -> Run
             attempted += 1
             try:
                 openalex_client.enrich(paper)
-            except requests.RequestException as exc:
+            except Exception as exc:
                 failures += 1
-                LOGGER.warning("OpenAlex enrichment failed for %s: %s", paper.doi, exc)
+                LOGGER.exception("OpenAlex enrichment failed for %s: %s", paper.doi, exc)
         reports.append(
             SourceReport(
                 name="OpenAlex enrichment",
@@ -316,18 +314,37 @@ def run_pipeline(config: dict[str, Any], dry_run: bool = False, now=None) -> Run
 
     summarizer = OptionalSummarizer(config)
     summarizer.apply(selected)
-    output_files = write_outputs(output_dir, selected, reports, started_at, config, health_status)
 
     email_cfg = config.get("email") or {}
     should_send_empty = bool(email_cfg.get("send_empty_digest", False))
+    minimum_interval_hours = float(email_cfg.get("minimum_interval_hours", 0) or 0)
+    health_alert = bool(health_status.errors or health_status.warnings)
+    skipped_for_interval = (
+        not dry_run
+        and not health_alert
+        and sent_within(state, started_at, minimum_interval_hours)
+    )
+    if skipped_for_interval:
+        health_status.warnings.append(
+            f"距上次成功发送不足 {minimum_interval_hours:g} 小时，本次仅记录运行结果，不重复发信"
+        )
+
+    output_files = write_outputs(output_dir, selected, reports, started_at, config, health_status)
+
     emailed = False
-    if not dry_run and email_cfg.get("enabled", True) and (selected or should_send_empty):
+    if (
+        not dry_run
+        and not skipped_for_interval
+        and email_cfg.get("enabled", True)
+        and (selected or should_send_empty)
+    ):
         send_digest(selected, reports, started_at, config, health_status)
         emailed = True
 
     if not dry_run:
-        retention_days = int((config.get("deduplication") or {}).get("retention_days", 730))
-        mark_seen(state, selected, now=started_at, retention_days=retention_days)
+        if emailed or not email_cfg.get("enabled", True):
+            retention_days = int((config.get("deduplication") or {}).get("retention_days", 730))
+            mark_seen(state, selected, now=started_at, retention_days=retention_days)
         save_state(state_path, state)
 
     return RunResult(

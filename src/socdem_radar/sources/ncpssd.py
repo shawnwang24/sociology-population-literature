@@ -188,7 +188,7 @@ class NCPSSDClient:
                 journal = futures[future]
                 try:
                     results.append((journal, future.result(), None))
-                except (requests.RequestException, ValueError, KeyError, TypeError) as exc:
+                except Exception as exc:
                     results.append((journal, None, exc))
         return results
 
@@ -201,6 +201,6 @@ class NCPSSDClient:
                 try:
                     future.result()
                     succeeded += 1
-                except (requests.RequestException, ValueError, KeyError, TypeError, json.JSONDecodeError):
+                except Exception:
                     failed += 1
         return succeeded, failed

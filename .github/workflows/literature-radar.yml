@@ -20,9 +20,30 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  online-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install
+        run: python -m pip install --disable-pip-version-check -e .
+
+      - name: Run online source smoke tests
+        env:
+          RUN_ONLINE_TESTS: "1"
+        run: python -m unittest discover -s tests -p "test_online_sources.py" -v
+
   radar:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 35
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -41,11 +62,6 @@ jobs:
 
       - name: Run offline tests
         run: python -m unittest discover -s tests -v
-
-      - name: Run online source smoke tests
-        env:
-          RUN_ONLINE_TESTS: "1"
-        run: python -m unittest discover -s tests -p "test_online_sources.py" -v
 
       - name: Run radar
         env:
@@ -93,8 +109,26 @@ jobs:
           if git diff --quiet -- data/state.json; then
             exit 0
           fi
+          incoming_state="$RUNNER_TEMP/literature-radar-state.json"
+          cp data/state.json "$incoming_state"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/state.json
           git commit -m "chore: update literature radar state"
-          git push
+          branch="${GITHUB_REF_NAME:-master}"
+          for attempt in 1 2 3; do
+            if git push origin "HEAD:${branch}"; then
+              exit 0
+            fi
+            echo "State push attempt ${attempt} failed; merging the latest remote state."
+            git fetch origin "$branch"
+            git reset --hard "origin/${branch}"
+            python -m socdem_radar --config-dir config merge-state --incoming "$incoming_state"
+            if git diff --quiet -- data/state.json; then
+              exit 0
+            fi
+            git add data/state.json
+            git commit -m "chore: merge literature radar state"
+          done
+          echo "Unable to persist literature radar state after 3 attempts." >&2
+          exit 1

@@ -1,8 +1,10 @@
 from __future__ import annotations
 
+import logging
 import os
 import smtplib
 import ssl
+import time
 from datetime import datetime
 from email.message import EmailMessage
 from email.utils import formataddr
@@ -10,6 +12,9 @@ from typing import Any
 
 from .models import HealthStatus, Paper, SourceReport
 from .render import render_html, render_markdown
+
+
+LOGGER = logging.getLogger(__name__)
 
 
 class EmailConfigError(ValueError):
@@ -68,18 +73,30 @@ def send_digest(
     )
 
     context = ssl.create_default_context()
-    if use_ssl:
-        with smtplib.SMTP_SSL(host, port, timeout=30, context=context) as client:
-            client.login(username, password)
-            client.send_message(message, to_addrs=recipients)
-    else:
-        with smtplib.SMTP(host, port, timeout=30) as client:
-            client.ehlo()
-            if use_starttls:
-                client.starttls(context=context)
-                client.ehlo()
-            client.login(username, password)
-            client.send_message(message, to_addrs=recipients)
+    attempts = max(1, int(email_config.get("retry_attempts", 3)))
+    for attempt in range(1, attempts + 1):
+        try:
+            if use_ssl:
+                with smtplib.SMTP_SSL(host, port, timeout=30, context=context) as client:
+                    client.login(username, password)
+                    client.send_message(message, to_addrs=recipients)
+            else:
+                with smtplib.SMTP(host, port, timeout=30) as client:
+                    client.ehlo()
+                    if use_starttls:
+                        client.starttls(context=context)
+                        client.ehlo()
+                    client.login(username, password)
+                    client.send_message(message, to_addrs=recipients)
+            return
+        except smtplib.SMTPAuthenticationError:
+            raise
+        except (smtplib.SMTPException, OSError) as exc:
+            if attempt >= attempts:
+                raise
+            delay = min(10, 2 ** (attempt - 1))
+            LOGGER.warning("SMTP 发送失败，第 %s/%s 次：%s；%s 秒后重试", attempt, attempts, exc, delay)
+            time.sleep(delay)
 
 
 def send_test(config: dict[str, Any], now: datetime) -> None:

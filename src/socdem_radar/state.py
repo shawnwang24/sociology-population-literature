@@ -2,12 +2,13 @@ from __future__ import annotations
 
 import json
 import os
+from copy import deepcopy
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
 from typing import Any
 
 from .models import Paper
-from .utils import iso_z, paper_key, utc_now
+from .utils import iso_z, normalize_title, paper_key, utc_now
 
 
 def load_state(path: str | Path) -> dict[str, Any]:
@@ -28,14 +29,37 @@ def load_state(path: str | Path) -> dict[str, Any]:
 
 def unseen_papers(papers: list[Paper], state: dict[str, Any]) -> list[Paper]:
     seen = state.get("seen") or {}
-    return [paper for paper in papers if paper_key(paper.doi, paper.title, paper.authors) not in seen]
+    seen_titles = {
+        normalize_title(str(record.get("title", "")))
+        for record in seen.values()
+        if isinstance(record, dict) and record.get("title")
+    }
+    return [
+        paper
+        for paper in papers
+        if paper_key(
+            paper.doi,
+            paper.title,
+            paper.authors,
+            source_id=paper.source_id,
+            source=paper.source,
+        )
+        not in seen
+        and normalize_title(paper.title) not in seen_titles
+    ]
 
 
 def mark_seen(state: dict[str, Any], papers: list[Paper], now: datetime | None = None, retention_days: int = 730) -> None:
     now = now or utc_now()
     seen = state.setdefault("seen", {})
     for paper in papers:
-        key = paper_key(paper.doi, paper.title, paper.authors)
+        key = paper_key(
+            paper.doi,
+            paper.title,
+            paper.authors,
+            source_id=paper.source_id,
+            source=paper.source,
+        )
         seen[key] = {
             "title": paper.title,
             "doi": paper.doi,
@@ -50,6 +74,60 @@ def mark_seen(state: dict[str, Any], papers: list[Paper], now: datetime | None =
         if sent_at < cutoff:
             del seen[key]
     state["last_success_at"] = iso_z(now)
+
+
+def sent_within(state: dict[str, Any], now: datetime, hours: float) -> bool:
+    if hours <= 0:
+        return False
+    value = str(state.get("last_success_at") or "").strip()
+    if not value:
+        return False
+    try:
+        previous = datetime.fromisoformat(value.replace("Z", "+00:00"))
+    except ValueError:
+        return False
+    if previous.tzinfo is None:
+        previous = previous.replace(tzinfo=UTC)
+    return now.astimezone(UTC) - previous.astimezone(UTC) < timedelta(hours=hours)
+
+
+def _timestamp(value: Any) -> datetime:
+    try:
+        parsed = datetime.fromisoformat(str(value or "").replace("Z", "+00:00"))
+    except ValueError:
+        return datetime.min.replace(tzinfo=UTC)
+    return parsed.replace(tzinfo=UTC) if parsed.tzinfo is None else parsed.astimezone(UTC)
+
+
+def merge_states(current: dict[str, Any], incoming: dict[str, Any]) -> dict[str, Any]:
+    merged = deepcopy(current)
+    merged.setdefault("version", 1)
+    merged_seen = merged.setdefault("seen", {})
+    for key, record in (incoming.get("seen") or {}).items():
+        previous = merged_seen.get(key) or {}
+        if _timestamp(record.get("sent_at")) >= _timestamp(previous.get("sent_at")):
+            merged_seen[key] = deepcopy(record)
+
+    merged_health = merged.setdefault("source_health", {})
+    for name, record in (incoming.get("source_health") or {}).items():
+        previous = merged_health.get(name) or {}
+        incoming_time = max(
+            _timestamp(record.get("last_success_at")),
+            _timestamp(record.get("last_failure_at")),
+        )
+        previous_time = max(
+            _timestamp(previous.get("last_success_at")),
+            _timestamp(previous.get("last_failure_at")),
+        )
+        if incoming_time >= previous_time:
+            merged_health[name] = deepcopy(record)
+
+    latest_success = max(
+        _timestamp(current.get("last_success_at")),
+        _timestamp(incoming.get("last_success_at")),
+    )
+    merged["last_success_at"] = iso_z(latest_success) if latest_success.year > 1 else None
+    return merged
 
 
 def save_state(path: str | Path, state: dict[str, Any]) -> None:

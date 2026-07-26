@@ -11,8 +11,9 @@ from .config import ConfigError, enabled_sources, load_config
 from .emailer import EmailConfigError, send_test
 from .models import Paper, SourceReport
 from .render import write_outputs
-from .scoring import rank_papers
 from .pipeline import run_pipeline
+from .scoring import rank_papers
+from .state import load_state, merge_states, save_state
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -27,6 +28,8 @@ def build_parser() -> argparse.ArgumentParser:
     subparsers.add_parser("validate", help="检查配置")
     subparsers.add_parser("demo", help="使用合成论文离线演示评分和邮件版式")
     subparsers.add_parser("send-test", help="发送一封不访问学术 API 的 SMTP 测试邮件")
+    merge_state = subparsers.add_parser("merge-state", help="合并并发运行产生的去重状态")
+    merge_state.add_argument("--incoming", required=True, help="待合并的状态文件")
     return parser
 
 
@@ -107,6 +110,13 @@ def main(argv: list[str] | None = None) -> None:
         if args.command == "send-test":
             send_test(config, datetime.now(UTC))
             print("测试邮件已发送")
+            return
+        if args.command == "merge-state":
+            paths = config.get("paths") or {}
+            state_path = project_root / str(paths.get("state_file", "data/state.json"))
+            merged = merge_states(load_state(state_path), load_state(args.incoming))
+            save_state(state_path, merged)
+            print(f"状态已合并：{state_path}")
             return
         if args.command == "run":
             result = run_pipeline(config, dry_run=args.dry_run)
