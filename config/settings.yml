@@ -7,7 +7,7 @@ lookback:
   days: 14
 selection:
   min_score: 6
-  max_papers: 15
+  max_papers: 30
   max_per_journal: 5
 scoring:
   title_multiplier: 3.0
