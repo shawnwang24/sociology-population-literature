@@ -1471,6 +1471,21 @@ journals:
   core_basis: JCR Sociology
   impact_factor: 1.2
   catalog_source: https://ooir.org/journals.php
+- name: Social Science & Medicine
+  enabled: true
+  language: en
+  disciplines:
+  - 社会学
+  - 健康
+  issns:
+  - 0277-9536
+  - 1873-5347
+  priority: 1
+  rss_url: ''
+  catalog: 用户补充
+  core_basis: 用户指定
+  impact_factor: null
+  catalog_source: https://www.sciencedirect.com/journal/social-science-and-medicine
 - name: 世界经济
   enabled: true
   ncpssd_code: 92713X
@@ -2113,3 +2128,34 @@ journals:
   impact_factor: null
   catalog_source: https://cssrac.nju.edu.cn/cpzx/zwshkxywsy/index.html
   monitoring_note: 已纳入完整核心目录；知网 RSS 在 GitHub Actions 无法解析域名，待接入可达官网来源后启用。
+- name: 社会发展研究
+  enabled: true
+  ncpssd_code: 72041X
+  language: zh-CN
+  disciplines:
+  - 社会学
+  issns:
+  - 2095-7580
+  priority: 1
+  rss_url: ''
+  catalog: 用户补充
+  core_basis: CSSCI、北大中文核心
+  impact_factor: null
+  catalog_source: https://www.ncpssd.cn/journal/details?gch=72041X
+  monitoring_note: 已启用国家哲学社会科学文献中心当期目录及文章详情。
+- name: 中国社会科学
+  enabled: true
+  ncpssd_code: 81908X
+  language: zh-CN
+  disciplines:
+  - 社会学
+  - 经济学
+  issns:
+  - 1002-4921
+  priority: 1
+  rss_url: ''
+  catalog: 用户补充
+  core_basis: CSSCI、北大中文核心
+  impact_factor: null
+  catalog_source: https://www.ncpssd.cn/journal/details?gch=81908X
+  monitoring_note: 已启用国家哲学社会科学文献中心当期目录及文章详情。
