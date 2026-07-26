@@ -18,8 +18,8 @@ class ConfigTests(unittest.TestCase):
         config = load_config(ROOT / "config")
         journals = config["journals"]
         enabled = [journal for journal in journals if journal.get("enabled", True)]
-        self.assertEqual(len(journals), 152)
-        self.assertEqual(len(enabled), 150)
+        self.assertEqual(len(journals), 155)
+        self.assertEqual(len(enabled), 153)
         self.assertTrue(
             all(
                 journal.get("issns")
@@ -31,6 +31,13 @@ class ConfigTests(unittest.TestCase):
         )
         self.assertIn("Magtech", enabled_sources(config))
         self.assertIn("NCPSSD", enabled_sources(config))
+        by_name = {journal["name"]: journal for journal in journals}
+        self.assertEqual(by_name["社会发展研究"]["ncpssd_code"], "72041X")
+        self.assertEqual(by_name["中国社会科学"]["ncpssd_code"], "81908X")
+        self.assertEqual(
+            by_name["Social Science & Medicine"]["issns"],
+            ["0277-9536", "1873-5347"],
+        )
 
         groups = {group["name"]: group for group in config["research_profile"]["groups"]}
         self.assertEqual(len(groups), 8)
