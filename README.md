@@ -9,6 +9,7 @@
 - 通过期刊 ISSN 从 Crossref 读取最近登记的新论文；
 - 可用 RSS/Atom 更快发现 Online First / Early View；
 - 可从部分中文期刊的 Magtech 编辑部官网读取当期标题、作者和完整中文摘要；
+- 可从国家哲学社会科学文献中心（NCPSSD）统一监测中文核心期刊，并补全作者、摘要、关键词和发布日期；
 - 可用 OpenAlex 按 DOI 补充摘要、主题、关键词和开放获取链接；
 - 可选用 OpenAlex 主题检索跨期刊发现论文；
 - 分别给标题、摘要、作者关键词和 OpenAlex 主题赋权；
@@ -26,7 +27,7 @@
 config/
   settings.yml       运行、评分、邮件和数据源设置
   topics.yml         研究方向、关键词、作者、排除词
-  journals.yml       目标期刊、ISSN、优先级、可选 RSS/中文期刊官网
+  journals.yml       目标期刊、ISSN、优先级、可选 RSS/中文期刊来源
   feeds.yml          工作论文平台或其他通用 RSS
 data/state.json      已推送论文的去重状态
 src/socdem_radar/    程序主体
@@ -44,11 +45,13 @@ tests/               离线测试
 
 修改：
 
-- `config/journals.yml`：期刊名称、纸质版/电子版 ISSN、期刊优先级，以及可选的 `rss_url`/`magtech_url`；
+- `config/journals.yml`：期刊名称、纸质版/电子版 ISSN、期刊优先级，以及可选的 `rss_url`、`magtech_url`、`ncpssd_code`；
 - `config/topics.yml`：主题组、关键词、权重、关注作者、排除词；
 - `config/settings.yml`：相关性阈值、每封最多几篇、回看天数。
 
 项目自带“健康不平等—社会分层—人口家庭—劳动职业—中国情境”的示例。它只是示范，可以全部替换。详细写法见 [CONFIG_GUIDE_CN.md](CONFIG_GUIDE_CN.md)。
+
+当前“完整核心版”目录共 152 本期刊：106 本英文期刊和 44 本中文期刊已接通。中文部分包含 3 本编辑部官网来源和 41 本 NCPSSD 来源；《农村经济》《南方人口》因暂未找到稳定的公开机器可读入口而保留在目录中，但暂不启用。NCPSSD 来源不需要 API key。
 
 ### 3. 配置 GitHub Actions Secrets
 

@@ -38,6 +38,13 @@ sources:
   magtech:
     enabled: true
     timeout_seconds: 30
+  ncpssd:
+    enabled: true
+    timeout_seconds: 20
+    max_workers: 8
+    full_detail_disciplines:
+    - 人口学
+    - 社会学
 email:
   enabled: true
   send_empty_digest: false

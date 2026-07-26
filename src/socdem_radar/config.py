@@ -68,8 +68,12 @@ def validate_config(config: dict[str, Any]) -> None:
             and not journal.get("issns")
             and not journal.get("rss_url")
             and not journal.get("magtech_url")
+            and not journal.get("ncpssd_code")
         ):
-            errors.append(f"启用的期刊 {journal.get('name', index)} 至少需要 issns、rss_url 或 magtech_url")
+            errors.append(
+                f"启用的期刊 {journal.get('name', index)} 至少需要 "
+                "issns、rss_url、magtech_url 或 ncpssd_code"
+            )
 
     if errors:
         raise ConfigError("配置检查未通过：\n- " + "\n- ".join(errors))
@@ -98,6 +102,11 @@ def enabled_sources(config: dict[str, Any]) -> list[str]:
         j.get("enabled", True) and j.get("magtech_url") for j in config.get("journals", [])
     ):
         names.append("Magtech")
+    ncpssd_enabled = (config.get("sources") or {}).get("ncpssd", {}).get("enabled", True)
+    if ncpssd_enabled and any(
+        j.get("enabled", True) and j.get("ncpssd_code") for j in config.get("journals", [])
+    ):
+        names.append("NCPSSD")
     openalex = (config.get("sources") or {}).get("openalex", {})
     if openalex.get("enabled", True) and openalex.get("discovery_enabled", False):
         names.append("OpenAlex discovery")

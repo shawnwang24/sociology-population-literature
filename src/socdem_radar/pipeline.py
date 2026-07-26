@@ -16,6 +16,7 @@ from .render import write_outputs
 from .scoring import rank_papers, score_paper
 from .sources.crossref import CrossrefClient
 from .sources.magtech import fetch_magtech_current
+from .sources.ncpssd import NCPSSDClient
 from .sources.openalex import OpenAlexClient
 from .sources.rss import fetch_feed
 from .state import load_state, mark_seen, save_state, unseen_papers
@@ -137,6 +138,29 @@ def run_pipeline(config: dict[str, Any], dry_run: bool = False, now=None) -> Run
             all_papers.extend(papers)
             reports.append(report)
 
+    ncpssd_cfg = sources_config.get("ncpssd") or {}
+    ncpssd_client: NCPSSDClient | None = None
+    if ncpssd_cfg.get("enabled", True):
+        ncpssd_journals = [
+            journal
+            for journal in config.get("journals") or []
+            if journal.get("enabled", True) and journal.get("ncpssd_code")
+        ]
+        if ncpssd_journals:
+            ncpssd_client = NCPSSDClient(
+                timeout=int(ncpssd_cfg.get("timeout_seconds", 20)),
+                max_workers=int(ncpssd_cfg.get("max_workers", 8)),
+            )
+            for journal, papers, error in ncpssd_client.fetch_journals(ncpssd_journals):
+                name = f"NCPSSD·{journal.get('name', 'unknown journal')}"
+                if error is not None:
+                    LOGGER.warning("%s failed: %s", name, error)
+                    reports.append(SourceReport(name=name, ok=False, error=str(error)[:500]))
+                    continue
+                found = papers or []
+                all_papers.extend(found)
+                reports.append(SourceReport(name=name, ok=True, paper_count=len(found)))
+
     openalex_cfg = sources_config.get("openalex") or {}
     openalex_key = os.getenv(str(openalex_cfg.get("api_key_env", "OPENALEX_API_KEY")), "").strip()
     openalex_client: OpenAlexClient | None = None
@@ -163,6 +187,29 @@ def run_pipeline(config: dict[str, Any], dry_run: bool = False, now=None) -> Run
 
     fetched_count = len(all_papers)
     unique = deduplicate(all_papers)
+
+    if ncpssd_client:
+        full_detail_disciplines = {
+            str(value) for value in ncpssd_cfg.get("full_detail_disciplines", ["人口学", "社会学"])
+        }
+        detail_candidates = [
+            paper
+            for paper in unique
+            if paper.source == "NCPSSD"
+            and (
+                full_detail_disciplines.intersection(paper.metadata.get("disciplines") or [])
+                or score_paper(paper, config).matched_terms
+            )
+        ]
+        succeeded, failed = ncpssd_client.enrich_many(detail_candidates)
+        reports.append(
+            SourceReport(
+                name="NCPSSD 摘要补全",
+                ok=failed < len(detail_candidates) if detail_candidates else True,
+                paper_count=succeeded,
+                error=f"{failed} 篇详情读取失败" if failed else "",
+            )
+        )
 
     if openalex_client and openalex_cfg.get("enrich_by_doi", True):
         enrichment_cap = int(openalex_cfg.get("max_enrichments_per_run", 40))
