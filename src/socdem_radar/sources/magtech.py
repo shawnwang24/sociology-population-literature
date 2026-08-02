@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import logging
 import re
 from datetime import datetime
 from html.parser import HTMLParser
@@ -13,6 +14,7 @@ from ..utils import clean_text, extract_doi, parse_date, unique_strings
 from .http import build_session
 
 
+LOGGER = logging.getLogger(__name__)
 ARTICLE_ID_RE = re.compile(r"^art\d+$", re.IGNORECASE)
 ISSUE_DATE_RE = re.compile(r"刊出日期\s*[:：]?\s*((?:19|20)\d{2}[-年/]\d{1,2}[-月/]\d{1,2})")
 AUTHOR_SEPARATOR_RE = re.compile(r"[,，;；、\s]+")
@@ -172,20 +174,50 @@ def fetch_magtech_current(
 ) -> list[Paper]:
     del start  # The page contains one current issue; persistent state prevents repeat mail.
     client = session or build_session("SocDemLiteratureRadar/0.1", retries=1)
-    page_url = str(journal["magtech_url"])
-    response = client.get(
-        page_url,
-        timeout=timeout,
-        headers={"Accept": "text/html,application/xhtml+xml"},
+    page_urls = unique_strings(
+        [str(journal["magtech_url"]), *(journal.get("magtech_fallback_urls") or [])]
     )
-    response.raise_for_status()
-    response.encoding = response.apparent_encoding or response.encoding or "utf-8"
-    papers = parse_magtech_current(
-        response.text,
-        journal,
-        page_url,
-        journal_priority=journal_priority,
-    )
-    if not papers:
-        raise ValueError("期刊官网当期目录中未解析到文章")
-    return papers
+    failures: list[str] = []
+
+    for page_url in page_urls:
+        try:
+            response = client.get(
+                page_url,
+                timeout=timeout,
+                headers={"Accept": "text/html,application/xhtml+xml"},
+            )
+            response.raise_for_status()
+            response.encoding = response.apparent_encoding or response.encoding or "utf-8"
+            papers = parse_magtech_current(
+                response.text,
+                journal,
+                page_url,
+                journal_priority=journal_priority,
+            )
+            if not papers:
+                raise ValueError("期刊官网当期目录中未解析到文章")
+            return papers
+        except Exception as exc:
+            failures.append(f"{page_url}: {exc}")
+            LOGGER.warning("Magtech source failed for %s: %s", journal.get("name", ""), exc)
+
+    fallback_code = clean_text(journal.get("ncpssd_fallback_code"))
+    if fallback_code:
+        try:
+            # Import lazily to keep the normal Magtech path independent and fast.
+            from .ncpssd import NCPSSDClient
+
+            fallback_journal = dict(journal)
+            fallback_journal["ncpssd_code"] = fallback_code
+            papers = NCPSSDClient(timeout=timeout, max_workers=1).fetch_journal(fallback_journal)
+            LOGGER.warning(
+                "Official site failed for %s; recovered %s papers from NCPSSD fallback %s",
+                journal.get("name", ""),
+                len(papers),
+                fallback_code,
+            )
+            return papers
+        except Exception as exc:
+            failures.append(f"NCPSSD {fallback_code}: {exc}")
+
+    raise RuntimeError("；".join(failures) or "期刊官网抓取失败")

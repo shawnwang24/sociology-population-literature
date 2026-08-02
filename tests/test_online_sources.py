@@ -55,6 +55,18 @@ class OnlineSourceTests(unittest.TestCase):
         self.assertTrue(papers)
         self.assertTrue(papers[0].title)
 
+    def test_ncpssd_society_fallback(self):
+        papers = NCPSSDClient(timeout=30, max_workers=1).fetch_journal(
+            {
+                "name": "社会",
+                "ncpssd_code": "97007X",
+                "priority": 1,
+                "disciplines": ["社会学"],
+            }
+        )
+        self.assertTrue(papers)
+        self.assertTrue(papers[0].title)
+
 
 if __name__ == "__main__":
     unittest.main()

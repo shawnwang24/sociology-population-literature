@@ -1,8 +1,10 @@
 import unittest
 from datetime import UTC, datetime
+from unittest.mock import patch
 
+from socdem_radar.models import Paper
 from socdem_radar.sources.crossref import CrossrefClient, parse_crossref_item
-from socdem_radar.sources.magtech import parse_magtech_current
+from socdem_radar.sources.magtech import fetch_magtech_current, parse_magtech_current
 from socdem_radar.sources.ncpssd import parse_article_metadata, parse_journal_page
 from socdem_radar.sources.openalex import OpenAlexClient, parse_openalex_work, reconstruct_abstract
 from socdem_radar.sources.rss import fetch_feed
@@ -233,6 +235,26 @@ class SourceParsingTests(unittest.TestCase):
         self.assertEqual(papers[0].authors, ["王修晓", "袁章伶"])
         self.assertEqual(papers[0].url, "https://src.ruc.edu.cn/CN/Y2026/V14/I3/5")
         self.assertEqual(papers[0].source, "Magtech")
+
+    @patch("socdem_radar.sources.ncpssd.NCPSSDClient.fetch_journal")
+    def test_magtech_uses_ncpssd_fallback_after_official_site_failure(self, fallback_fetch):
+        fallback_fetch.return_value = [
+            Paper(title="A recovered paper", journal="社会", source="NCPSSD", source_id="paper-1")
+        ]
+        session = FakeSession([FakeResponse(status_code=503)])
+
+        papers = fetch_magtech_current(
+            {
+                "name": "社会",
+                "magtech_url": "https://journal.example/current.shtml",
+                "ncpssd_fallback_code": "97007X",
+            },
+            datetime(2026, 7, 1, tzinfo=UTC),
+            session=session,
+        )
+
+        self.assertEqual([paper.title for paper in papers], ["A recovered paper"])
+        self.assertEqual(fallback_fetch.call_args.args[0]["ncpssd_code"], "97007X")
 
 
 if __name__ == "__main__":
