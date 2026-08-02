@@ -9,8 +9,8 @@ on:
         default: true
         type: boolean
   schedule:
-    # 每周日北京时间 14:07（UTC 06:07）；避开 GitHub Actions 整点拥堵。
-    - cron: "7 6 * * 0"
+    # 每周一北京时间 14:18（UTC 06:18）；避开 GitHub Actions 整点拥堵。
+    - cron: "18 6 * * 1"
 
 permissions:
   contents: write
