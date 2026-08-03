@@ -1,5 +1,5 @@
 {
-  "last_success_at": "2026-08-02T08:18:27.714006Z",
+  "last_success_at": "2026-08-03T10:07:00.548608Z",
   "pending": {},
   "seen": {
     "doi:10.1002/psp.70325": {
@@ -36,6 +36,11 @@
       "doi": "10.1007/s11205-026-03908-7",
       "sent_at": "2026-08-02T08:18:27.714006Z",
       "title": "Measuring Social Connectedness as a Dimension of Multidimensional Poverty or Well-Being"
+    },
+    "doi:10.1016/j.ehb.2026.101636": {
+      "doi": "10.1016/j.ehb.2026.101636",
+      "sent_at": "2026-08-03T10:07:00.548608Z",
+      "title": "Place-based ecological restoration and self-rated health: Quasi-experimental evidence from China"
     },
     "doi:10.1016/j.jhealeco.2026.103173": {
       "doi": "10.1016/j.jhealeco.2026.103173",
@@ -82,6 +87,11 @@
       "sent_at": "2026-07-25T09:14:25.091474Z",
       "title": "Pharmacological Practices Among Chilean University Students: Between Emotional Mediations, Performance Demands, and Health Mandates"
     },
+    "doi:10.1111/imig.70210": {
+      "doi": "10.1111/imig.70210",
+      "sent_at": "2026-08-03T10:07:00.548608Z",
+      "title": "Intermediaries and Informal Migration Pathways of Filipino Migrant Workers in Belgium"
+    },
     "doi:10.1111/jomf.70103": {
       "doi": "10.1111/jomf.70103",
       "sent_at": "2026-07-25T09:14:25.091474Z",
@@ -91,6 +101,11 @@
       "doi": "10.1146/annurev-soc-091025-055346",
       "sent_at": "2026-08-02T08:18:27.714006Z",
       "title": "Colorism as a Fundamental Cause of Inequalities in Health"
+    },
+    "doi:10.1177/00380261261468136": {
+      "doi": "10.1177/00380261261468136",
+      "sent_at": "2026-08-03T10:07:00.548608Z",
+      "title": "Coerced Voluntarism: The Precarity and Insecurity of Free Labour of Trainee Counsellors in the UK"
     },
     "doi:10.1177/14687941261466610": {
       "doi": "10.1177/14687941261466610",
@@ -273,931 +288,931 @@
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜American Economic Journal: Applied Economics": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜American Economic Journal: Economic Policy": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜American Economic Review": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜American Journal of Cultural Sociology": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜American Journal of Sociology": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜American Sociological Review": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Annual Review of Economics": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Annual Review of Sociology": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Asian Population Studies": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜British Journal of Sociology": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜British Journal of Sociology of Education": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜China Agricultural Economic Review": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜China Economic Review": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Chinese Sociological Review": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Comparative Migration Studies": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Current Sociology": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Demographic Research": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Demography": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Econometrica": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Economic Development and Cultural Change": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Economic Inquiry": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Economics & Human Biology": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Economics of Education Review": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Economy and Society": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Ethnic and Racial Studies": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Ethnography": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜European Journal of Population": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜European Societies": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜European Sociological Review": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Feminist Economics": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Gender & Society": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Health Sociology Review": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜IZA Journal of Labor Economics": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Industrial and Labor Relations Review": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜International Migration": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜International Migration Review": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜International Sociology": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Journal of Biosocial Science": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Journal of Comparative Economics": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Journal of Contemporary Ethnography": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Journal of Demographic Economics": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Journal of Development Economics": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Journal of Development Studies": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Journal of Econometrics": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Journal of Economic Behavior & Organization": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Journal of Economic Literature": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Journal of Economic Perspectives": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Journal of Ethnic and Migration Studies": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Journal of Family and Economic Issues": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Journal of Health Economics": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Journal of Health and Social Behavior": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Journal of Human Resources": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Journal of Immigrant & Refugee Studies": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Journal of International Economics": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Journal of Labor Economics": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Journal of Marriage and Family": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Journal of Political Economy": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Journal of Population Economics": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Journal of Refugee Studies": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Journal of Urban Economics": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Journal of the Economics of Ageing": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Labour Economics": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Mathematical Population Studies": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Migration Studies": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Oxford Bulletin of Economics and Statistics": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Population": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Population Research and Policy Review": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Population Studies": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Population and Development Review": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Population and Environment": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Population, Space and Place": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Qualitative Research": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Qualitative Sociology": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Quarterly Journal of Economics": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Rationality and Society": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Research in Social Stratification and Mobility": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Review of Economic Studies": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Review of Economics and Statistics": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Review of Income and Wealth": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Rural Sociology": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Social Forces": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Social Indicators Research": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Social Networks": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Social Problems": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Social Science & Medicine": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Social Science Quarterly": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Social Science Research": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Society and Mental Health": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Socio-Economic Review": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Sociologia Ruralis": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Sociological Forum": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Sociological Inquiry": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Sociological Methodology": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Sociological Methods & Research": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Sociological Science": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Sociology": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Sociology of Education": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Sociology of Health & Illness": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Studies in Family Planning": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Teaching Sociology": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜The Sociological Review": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Theory and Society": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Work and Occupations": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Work, Employment and Society": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜World Development": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜Youth & Society": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜中国社会科学": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "Crossref｜社会发展研究": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "NCPSSD·世界经济": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "NCPSSD·世界经济文汇": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "NCPSSD·中国人口科学": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "NCPSSD·中国农村经济": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "NCPSSD·中国工业经济": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "NCPSSD·中国社会科学": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "NCPSSD·中国经济问题": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "NCPSSD·中国青年研究": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "NCPSSD·产业经济研究": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "NCPSSD·人口与发展": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "NCPSSD·人口与经济": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "NCPSSD·人口学刊": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "NCPSSD·农业技术经济": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "NCPSSD·农业经济问题": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "NCPSSD·劳动经济研究": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "NCPSSD·南开经济研究": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "NCPSSD·南方经济": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "NCPSSD·国际经济评论": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "NCPSSD·国际金融研究": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "NCPSSD·妇女研究论丛": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "NCPSSD·学海": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "NCPSSD·宏观经济研究": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "NCPSSD·开放时代": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "NCPSSD·当代经济科学": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "NCPSSD·探索与争鸣": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "NCPSSD·改革": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "NCPSSD·数量经济技术经济研究": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "NCPSSD·社会发展研究": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "NCPSSD·社会学研究": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "NCPSSD·社会建设": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "NCPSSD·管理世界": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "NCPSSD·经济学动态": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "NCPSSD·经济学（季刊）": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "NCPSSD·经济理论与经济管理": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "NCPSSD·经济研究": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "NCPSSD·经济社会体制比较": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "NCPSSD·经济科学": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "NCPSSD·经济评论": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "NCPSSD·西北人口": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "NCPSSD·财经研究": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "NCPSSD·财贸经济": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "NCPSSD·金融研究": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "NCPSSD·青年研究": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "官网｜人口研究": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "官网｜社会": {
-      "consecutive_failures": 1,
-      "last_error": "HTTPSConnectionPool(host='www.society.shu.edu.cn', port=443): Max retries exceeded with url: /CN/1004-8804/current.shtml (Caused by ReadTimeoutError(\"HTTPSConnectionPool(host='www.society.shu.edu.cn', port=443): Read timed out. (read timeout=30)\"))",
+      "consecutive_failures": 0,
+      "last_error": "",
       "last_failure_at": "2026-08-02T08:18:27.714006Z",
-      "last_success_at": "2026-07-26T08:22:10.134955Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     },
     "官网｜社会学评论": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-08-02T08:18:27.714006Z"
+      "last_success_at": "2026-08-03T10:07:00.548608Z"
     }
   },
   "version": 1
