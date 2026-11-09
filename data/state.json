@@ -1,5 +1,5 @@
 {
-  "last_success_at": "2026-11-02T15:58:29.283574Z",
+  "last_success_at": "2026-11-09T16:24:27.710117Z",
   "pending": {},
   "seen": {
     "doi:10.1002/psp.70325": {
@@ -212,10 +212,25 @@
       "sent_at": "2026-11-02T15:58:29.283574Z",
       "title": "The Novel Minimal Uncertainty with Subjective Constraints Method for Constructing Composite Indicators and its Application for Analyzing Child Well-Being and the Health System"
     },
+    "doi:10.1007/s11205-026-03958-x": {
+      "doi": "10.1007/s11205-026-03958-x",
+      "sent_at": "2026-11-09T16:24:27.710117Z",
+      "title": "Home, Work, and Care: Working from Home and Parental Wellbeing in Families Raising Children with Disabilities"
+    },
     "doi:10.1007/s11205-026-03960-3": {
       "doi": "10.1007/s11205-026-03960-3",
       "sent_at": "2026-11-02T15:58:29.283574Z",
       "title": "The Effect of Public Employment Service on Worker Well-Being: Evidence from China"
+    },
+    "doi:10.1007/s11205-026-03961-2": {
+      "doi": "10.1007/s11205-026-03961-2",
+      "sent_at": "2026-11-09T16:24:27.710117Z",
+      "title": "Strong-Tie Social Capital and Life Satisfaction Across 30 Countries: The Moderating Roles of Individual Income, National Affluence, and Income Inequality"
+    },
+    "doi:10.1016/j.econedurev.2026.102852": {
+      "doi": "10.1016/j.econedurev.2026.102852",
+      "sent_at": "2026-11-09T16:24:27.710117Z",
+      "title": "Born at the right time: Examining the effect of age at school entry on mental health in adulthood"
     },
     "doi:10.1016/j.ehb.2026.101636": {
       "doi": "10.1016/j.ehb.2026.101636",
@@ -296,6 +311,11 @@
       "doi": "10.1016/j.jhealeco.2026.103173",
       "sent_at": "2026-08-02T08:18:27.714006Z",
       "title": "Hospital billing regulations and financial well-being: Evidence from California’s Fair Pricing Law"
+    },
+    "doi:10.1016/j.jhealeco.2026.103196": {
+      "doi": "10.1016/j.jhealeco.2026.103196",
+      "sent_at": "2026-11-09T16:24:27.710117Z",
+      "title": "The psychological toll of heat: The effects of temperature on mental health in Mexico"
     },
     "doi:10.1016/j.jue.2026.103915": {
       "doi": "10.1016/j.jue.2026.103915",
@@ -507,10 +527,35 @@
       "sent_at": "2026-11-02T15:58:29.283574Z",
       "title": "Mapping Connections among Childhood and Adulthood Adversity, Collective Stressors, and Mental Health Symptoms: A Network Analysis Approach"
     },
+    "doi:10.1016/j.socscimed.2026.119989": {
+      "doi": "10.1016/j.socscimed.2026.119989",
+      "sent_at": "2026-11-09T16:24:27.710117Z",
+      "title": "“We’re like walking on thin ice for our happiness”: Platform-mediated reproductive governance in Chinese women’s IVF narratives on RedNote"
+    },
     "doi:10.1016/j.socscimed.2026.119994": {
       "doi": "10.1016/j.socscimed.2026.119994",
       "sent_at": "2026-11-02T15:58:29.283574Z",
       "title": "Intersecting vulnerabilities in engagement in transactional sex and mental health among internally displaced adolescents in Nigeria"
+    },
+    "doi:10.1016/j.socscimed.2026.120002": {
+      "doi": "10.1016/j.socscimed.2026.120002",
+      "sent_at": "2026-11-09T16:24:27.710117Z",
+      "title": "A cross-national comparison of mental health policy texts during the COVID-19 pandemic"
+    },
+    "doi:10.1016/j.socscimed.2026.120004": {
+      "doi": "10.1016/j.socscimed.2026.120004",
+      "sent_at": "2026-11-09T16:24:27.710117Z",
+      "title": "Building an Action-oriented Evidence-base: Understanding the Social Determinants of Health as a Complex, Dynamic System"
+    },
+    "doi:10.1016/j.socscimed.2026.120016": {
+      "doi": "10.1016/j.socscimed.2026.120016",
+      "sent_at": "2026-11-09T16:24:27.710117Z",
+      "title": "‘A shadow of her former self’: The mental and physical health impacts of temporary accommodation for homeless neurodivergent children and their families in the United Kingdom"
+    },
+    "doi:10.1016/j.socscimed.2026.120022": {
+      "doi": "10.1016/j.socscimed.2026.120022",
+      "sent_at": "2026-11-09T16:24:27.710117Z",
+      "title": "Are repeated measurements, neighbourhoods and intersectional strata exchangeable? On simple means versus random effects in the study of health inequalities"
     },
     "doi:10.1016/j.ssresearch.2026.103419": {
       "doi": "10.1016/j.ssresearch.2026.103419",
@@ -526,6 +571,16 @@
       "doi": "10.1016/j.ssresearch.2026.103440",
       "sent_at": "2026-09-28T13:59:03.755450Z",
       "title": "The role of intergenerational social mobility in subjective social status: Comparing children of immigrants and children of natives"
+    },
+    "doi:10.1016/j.ssresearch.2026.103470": {
+      "doi": "10.1016/j.ssresearch.2026.103470",
+      "sent_at": "2026-11-09T16:24:27.710117Z",
+      "title": "The hidden heterogeneity of worker–job mismatch: Evidence from education–skill configurations"
+    },
+    "doi:10.1016/j.ssresearch.2026.103471": {
+      "doi": "10.1016/j.ssresearch.2026.103471",
+      "sent_at": "2026-11-09T16:24:27.710117Z",
+      "title": "Democratization in our times: political differences in gains in life satisfaction, 2006-2022"
     },
     "doi:10.1016/j.worlddev.2026.107570": {
       "doi": "10.1016/j.worlddev.2026.107570",
@@ -717,6 +772,11 @@
       "sent_at": "2026-11-02T15:58:29.283574Z",
       "title": "Parent–Child Closeness and Child Behavior: The Strengths of Lower‐Socioeconomic Status Family Life"
     },
+    "doi:10.1111/jomf.70136": {
+      "doi": "10.1111/jomf.70136",
+      "sent_at": "2026-11-09T16:24:27.710117Z",
+      "title": "Family Socioeconomic Disadvantages, Psycho‐Behavioral Family Processes, and Korean Parents' and Adolescents' Physical Health"
+    },
     "doi:10.1111/obes.70138": {
       "doi": "10.1111/obes.70138",
       "sent_at": "2026-11-02T15:58:29.283574Z",
@@ -787,6 +847,11 @@
       "sent_at": "2026-10-26T13:07:23.079239Z",
       "title": "Explaining Social Class Identity Over Time: The Increasing Role of Asset Ownership"
     },
+    "doi:10.1177/00380385261468599": {
+      "doi": "10.1177/00380385261468599",
+      "sent_at": "2026-11-09T16:24:27.710117Z",
+      "title": "Unpacking the multidimensionality of gender role attitudes: The interactive role of territory and social class in Italy"
+    },
     "doi:10.1177/0044118x261489290": {
       "doi": "10.1177/0044118x261489290",
       "sent_at": "2026-11-02T15:58:29.283574Z",
@@ -832,6 +897,11 @@
       "sent_at": "2026-09-14T12:51:05.242759Z",
       "title": "Open to all? Examining class inequality in UK museum work through Bourdieu’s field-logics and the construction of ‘ideal’ career norms"
     },
+    "doi:10.1177/09500170261475931": {
+      "doi": "10.1177/09500170261475931",
+      "sent_at": "2026-11-09T16:24:27.710117Z",
+      "title": "Does the transition to self-employment benefit mental health? Evidence from the UK"
+    },
     "doi:10.1177/14687941261466566": {
       "doi": "10.1177/14687941261466566",
       "sent_at": "2026-08-10T08:05:26.260686Z",
@@ -841,6 +911,11 @@
       "doi": "10.1177/14687941261466610",
       "sent_at": "2026-07-25T09:14:25.091474Z",
       "title": "Dialogic inquiry interviews: presenting a novel method for exploring young people's conceptualisations of well-being"
+    },
+    "doi:10.1257/jep.20251487": {
+      "doi": "10.1257/jep.20251487",
+      "sent_at": "2026-11-09T16:24:27.710117Z",
+      "title": "The Meritocratic Consensus and Stratification in Higher Education"
     },
     "doi:10.1257/pol.20240586": {
       "doi": "10.1257/pol.20240586",
@@ -1243,931 +1318,931 @@
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜American Economic Journal: Applied Economics": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜American Economic Journal: Economic Policy": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜American Economic Review": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜American Journal of Cultural Sociology": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜American Journal of Sociology": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜American Sociological Review": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Annual Review of Economics": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Annual Review of Sociology": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Asian Population Studies": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜British Journal of Sociology": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜British Journal of Sociology of Education": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜China Agricultural Economic Review": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜China Economic Review": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Chinese Sociological Review": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Comparative Migration Studies": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Current Sociology": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Demographic Research": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Demography": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Econometrica": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Economic Development and Cultural Change": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Economic Inquiry": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Economics & Human Biology": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Economics of Education Review": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Economy and Society": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Ethnic and Racial Studies": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Ethnography": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜European Journal of Population": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜European Societies": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜European Sociological Review": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Feminist Economics": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Gender & Society": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Health Sociology Review": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜IZA Journal of Labor Economics": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Industrial and Labor Relations Review": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜International Migration": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜International Migration Review": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜International Sociology": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Journal of Biosocial Science": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Journal of Comparative Economics": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Journal of Contemporary Ethnography": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Journal of Demographic Economics": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Journal of Development Economics": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Journal of Development Studies": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Journal of Econometrics": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Journal of Economic Behavior & Organization": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Journal of Economic Literature": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Journal of Economic Perspectives": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Journal of Ethnic and Migration Studies": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Journal of Family and Economic Issues": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Journal of Health Economics": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Journal of Health and Social Behavior": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Journal of Human Resources": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Journal of Immigrant & Refugee Studies": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Journal of International Economics": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Journal of Labor Economics": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Journal of Marriage and Family": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Journal of Political Economy": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Journal of Population Economics": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Journal of Refugee Studies": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Journal of Urban Economics": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Journal of the Economics of Ageing": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Labour Economics": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Mathematical Population Studies": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Migration Studies": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Oxford Bulletin of Economics and Statistics": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Population": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Population Research and Policy Review": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Population Studies": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Population and Development Review": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Population and Environment": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Population, Space and Place": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Qualitative Research": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Qualitative Sociology": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Quarterly Journal of Economics": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Rationality and Society": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Research in Social Stratification and Mobility": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Review of Economic Studies": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Review of Economics and Statistics": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Review of Income and Wealth": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Rural Sociology": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Social Forces": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Social Indicators Research": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Social Networks": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Social Problems": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Social Science & Medicine": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Social Science Quarterly": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Social Science Research": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Society and Mental Health": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Socio-Economic Review": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Sociologia Ruralis": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Sociological Forum": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Sociological Inquiry": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Sociological Methodology": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Sociological Methods & Research": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Sociological Science": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Sociology": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Sociology of Education": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Sociology of Health & Illness": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Studies in Family Planning": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Teaching Sociology": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜The Sociological Review": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Theory and Society": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Work and Occupations": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Work, Employment and Society": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜World Development": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜Youth & Society": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜中国社会科学": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "Crossref｜社会发展研究": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "NCPSSD·世界经济": {
-      "consecutive_failures": 0,
-      "last_error": "",
-      "last_failure_at": null,
+      "consecutive_failures": 1,
+      "last_error": "HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Max retries exceeded with url: /journal/details?gch=92713X (Caused by ReadTimeoutError(\"HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Read timed out. (read timeout=20)\"))",
+      "last_failure_at": "2026-11-09T16:24:27.710117Z",
       "last_success_at": "2026-11-02T15:58:29.283574Z"
     },
     "NCPSSD·世界经济文汇": {
-      "consecutive_failures": 0,
-      "last_error": "",
-      "last_failure_at": null,
+      "consecutive_failures": 1,
+      "last_error": "HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Max retries exceeded with url: /journal/details?gch=92539X (Caused by ReadTimeoutError(\"HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Read timed out. (read timeout=20)\"))",
+      "last_failure_at": "2026-11-09T16:24:27.710117Z",
       "last_success_at": "2026-11-02T15:58:29.283574Z"
     },
     "NCPSSD·中国人口科学": {
-      "consecutive_failures": 0,
-      "last_error": "",
-      "last_failure_at": null,
+      "consecutive_failures": 1,
+      "last_error": "HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Max retries exceeded with url: /journal/details?gch=97725X (Caused by ReadTimeoutError(\"HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Read timed out. (read timeout=20)\"))",
+      "last_failure_at": "2026-11-09T16:24:27.710117Z",
       "last_success_at": "2026-11-02T15:58:29.283574Z"
     },
     "NCPSSD·中国农村经济": {
-      "consecutive_failures": 0,
-      "last_error": "",
-      "last_failure_at": null,
+      "consecutive_failures": 1,
+      "last_error": "HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Max retries exceeded with url: /journal/details?gch=94178X (Caused by ReadTimeoutError(\"HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Read timed out. (read timeout=20)\"))",
+      "last_failure_at": "2026-11-09T16:24:27.710117Z",
       "last_success_at": "2026-11-02T15:58:29.283574Z"
     },
     "NCPSSD·中国工业经济": {
-      "consecutive_failures": 0,
-      "last_error": "",
-      "last_failure_at": null,
+      "consecutive_failures": 1,
+      "last_error": "HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Max retries exceeded with url: /journal/details?gch=93800A (Caused by ReadTimeoutError(\"HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Read timed out. (read timeout=20)\"))",
+      "last_failure_at": "2026-11-09T16:24:27.710117Z",
       "last_success_at": "2026-11-02T15:58:29.283574Z"
     },
     "NCPSSD·中国社会科学": {
-      "consecutive_failures": 0,
-      "last_error": "",
-      "last_failure_at": null,
+      "consecutive_failures": 1,
+      "last_error": "HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Max retries exceeded with url: /journal/details?gch=81908X (Caused by ReadTimeoutError(\"HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Read timed out. (read timeout=20)\"))",
+      "last_failure_at": "2026-11-09T16:24:27.710117Z",
       "last_success_at": "2026-11-02T15:58:29.283574Z"
     },
     "NCPSSD·中国经济问题": {
-      "consecutive_failures": 0,
-      "last_error": "",
-      "last_failure_at": null,
+      "consecutive_failures": 1,
+      "last_error": "HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Max retries exceeded with url: /journal/details?gch=90744X (Caused by ReadTimeoutError(\"HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Read timed out. (read timeout=20)\"))",
+      "last_failure_at": "2026-11-09T16:24:27.710117Z",
       "last_success_at": "2026-11-02T15:58:29.283574Z"
     },
     "NCPSSD·中国青年研究": {
-      "consecutive_failures": 0,
-      "last_error": "",
-      "last_failure_at": null,
+      "consecutive_failures": 1,
+      "last_error": "HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Max retries exceeded with url: /journal/details?gch=82199X (Caused by ReadTimeoutError(\"HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Read timed out. (read timeout=20)\"))",
+      "last_failure_at": "2026-11-09T16:24:27.710117Z",
       "last_success_at": "2026-11-02T15:58:29.283574Z"
     },
     "NCPSSD·产业经济研究": {
-      "consecutive_failures": 0,
-      "last_error": "",
-      "last_failure_at": null,
+      "consecutive_failures": 1,
+      "last_error": "HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Max retries exceeded with url: /journal/details?gch=82827B (Caused by ReadTimeoutError(\"HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Read timed out. (read timeout=20)\"))",
+      "last_failure_at": "2026-11-09T16:24:27.710117Z",
       "last_success_at": "2026-11-02T15:58:29.283574Z"
     },
     "NCPSSD·人口与发展": {
-      "consecutive_failures": 0,
-      "last_error": "",
-      "last_failure_at": null,
+      "consecutive_failures": 1,
+      "last_error": "HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Max retries exceeded with url: /journal/details?gch=90419A (Caused by ReadTimeoutError(\"HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Read timed out. (read timeout=20)\"))",
+      "last_failure_at": "2026-11-09T16:24:27.710117Z",
       "last_success_at": "2026-11-02T15:58:29.283574Z"
     },
     "NCPSSD·人口与经济": {
-      "consecutive_failures": 0,
-      "last_error": "",
-      "last_failure_at": null,
+      "consecutive_failures": 1,
+      "last_error": "HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Max retries exceeded with url: /journal/details?gch=95683X (Caused by ReadTimeoutError(\"HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Read timed out. (read timeout=20)\"))",
+      "last_failure_at": "2026-11-09T16:24:27.710117Z",
       "last_success_at": "2026-11-02T15:58:29.283574Z"
     },
     "NCPSSD·人口学刊": {
-      "consecutive_failures": 0,
-      "last_error": "",
-      "last_failure_at": null,
+      "consecutive_failures": 1,
+      "last_error": "HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Max retries exceeded with url: /journal/details?gch=91708X (Caused by ReadTimeoutError(\"HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Read timed out. (read timeout=20)\"))",
+      "last_failure_at": "2026-11-09T16:24:27.710117Z",
       "last_success_at": "2026-11-02T15:58:29.283574Z"
     },
     "NCPSSD·农业技术经济": {
-      "consecutive_failures": 0,
-      "last_error": "",
-      "last_failure_at": null,
+      "consecutive_failures": 1,
+      "last_error": "HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Max retries exceeded with url: /journal/details?gch=90329X (Caused by ReadTimeoutError(\"HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Read timed out. (read timeout=20)\"))",
+      "last_failure_at": "2026-11-09T16:24:27.710117Z",
       "last_success_at": "2026-11-02T15:58:29.283574Z"
     },
     "NCPSSD·农业经济问题": {
-      "consecutive_failures": 0,
-      "last_error": "",
-      "last_failure_at": null,
+      "consecutive_failures": 1,
+      "last_error": "HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Max retries exceeded with url: /journal/details?gch=96316X (Caused by ReadTimeoutError(\"HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Read timed out. (read timeout=20)\"))",
+      "last_failure_at": "2026-11-09T16:24:27.710117Z",
       "last_success_at": "2026-11-02T15:58:29.283574Z"
     },
     "NCPSSD·劳动经济研究": {
-      "consecutive_failures": 0,
-      "last_error": "",
-      "last_failure_at": null,
+      "consecutive_failures": 1,
+      "last_error": "HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Max retries exceeded with url: /journal/details?gch=60089X (Caused by ReadTimeoutError(\"HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Read timed out. (read timeout=20)\"))",
+      "last_failure_at": "2026-11-09T16:24:27.710117Z",
       "last_success_at": "2026-11-02T15:58:29.283574Z"
     },
     "NCPSSD·南开经济研究": {
-      "consecutive_failures": 0,
-      "last_error": "",
-      "last_failure_at": null,
+      "consecutive_failures": 1,
+      "last_error": "HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Max retries exceeded with url: /journal/details?gch=96678X (Caused by ReadTimeoutError(\"HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Read timed out. (read timeout=20)\"))",
+      "last_failure_at": "2026-11-09T16:24:27.710117Z",
       "last_success_at": "2026-11-02T15:58:29.283574Z"
     },
     "NCPSSD·南方经济": {
-      "consecutive_failures": 0,
-      "last_error": "",
-      "last_failure_at": null,
+      "consecutive_failures": 1,
+      "last_error": "HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Max retries exceeded with url: /journal/details?gch=90883X (Caused by ReadTimeoutError(\"HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Read timed out. (read timeout=20)\"))",
+      "last_failure_at": "2026-11-09T16:24:27.710117Z",
       "last_success_at": "2026-11-02T15:58:29.283574Z"
     },
     "NCPSSD·国际经济评论": {
-      "consecutive_failures": 0,
-      "last_error": "",
-      "last_failure_at": null,
+      "consecutive_failures": 1,
+      "last_error": "HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Max retries exceeded with url: /journal/details?gch=90440X (Caused by ReadTimeoutError(\"HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Read timed out. (read timeout=20)\"))",
+      "last_failure_at": "2026-11-09T16:24:27.710117Z",
       "last_success_at": "2026-11-02T15:58:29.283574Z"
     },
     "NCPSSD·国际金融研究": {
-      "consecutive_failures": 0,
-      "last_error": "",
-      "last_failure_at": null,
+      "consecutive_failures": 1,
+      "last_error": "HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Max retries exceeded with url: /journal/details?gch=98100X (Caused by ReadTimeoutError(\"HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Read timed out. (read timeout=20)\"))",
+      "last_failure_at": "2026-11-09T16:24:27.710117Z",
       "last_success_at": "2026-11-02T15:58:29.283574Z"
     },
     "NCPSSD·妇女研究论丛": {
-      "consecutive_failures": 0,
-      "last_error": "",
-      "last_failure_at": null,
+      "consecutive_failures": 1,
+      "last_error": "HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Max retries exceeded with url: /journal/details?gch=82596X (Caused by ReadTimeoutError(\"HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Read timed out. (read timeout=20)\"))",
+      "last_failure_at": "2026-11-09T16:24:27.710117Z",
       "last_success_at": "2026-11-02T15:58:29.283574Z"
     },
     "NCPSSD·学海": {
-      "consecutive_failures": 0,
-      "last_error": "",
-      "last_failure_at": null,
+      "consecutive_failures": 1,
+      "last_error": "HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Max retries exceeded with url: /journal/details?gch=82201X (Caused by ReadTimeoutError(\"HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Read timed out. (read timeout=20)\"))",
+      "last_failure_at": "2026-11-09T16:24:27.710117Z",
       "last_success_at": "2026-11-02T15:58:29.283574Z"
     },
     "NCPSSD·宏观经济研究": {
-      "consecutive_failures": 0,
-      "last_error": "",
-      "last_failure_at": null,
+      "consecutive_failures": 1,
+      "last_error": "HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Max retries exceeded with url: /journal/details?gch=96811B (Caused by ReadTimeoutError(\"HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Read timed out. (read timeout=20)\"))",
+      "last_failure_at": "2026-11-09T16:24:27.710117Z",
       "last_success_at": "2026-11-02T15:58:29.283574Z"
     },
     "NCPSSD·开放时代": {
-      "consecutive_failures": 0,
-      "last_error": "",
-      "last_failure_at": null,
+      "consecutive_failures": 1,
+      "last_error": "HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Max retries exceeded with url: /journal/details?gch=81581X (Caused by ReadTimeoutError(\"HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Read timed out. (read timeout=20)\"))",
+      "last_failure_at": "2026-11-09T16:24:27.710117Z",
       "last_success_at": "2026-11-02T15:58:29.283574Z"
     },
     "NCPSSD·当代经济科学": {
-      "consecutive_failures": 0,
-      "last_error": "",
-      "last_failure_at": null,
+      "consecutive_failures": 1,
+      "last_error": "HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Max retries exceeded with url: /journal/details?gch=96310X (Caused by ReadTimeoutError(\"HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Read timed out. (read timeout=20)\"))",
+      "last_failure_at": "2026-11-09T16:24:27.710117Z",
       "last_success_at": "2026-11-02T15:58:29.283574Z"
     },
     "NCPSSD·探索与争鸣": {
-      "consecutive_failures": 0,
-      "last_error": "",
-      "last_failure_at": null,
+      "consecutive_failures": 1,
+      "last_error": "HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Max retries exceeded with url: /journal/details?gch=97673X (Caused by ReadTimeoutError(\"HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Read timed out. (read timeout=20)\"))",
+      "last_failure_at": "2026-11-09T16:24:27.710117Z",
       "last_success_at": "2026-11-02T15:58:29.283574Z"
     },
     "NCPSSD·改革": {
-      "consecutive_failures": 0,
-      "last_error": "",
-      "last_failure_at": null,
+      "consecutive_failures": 1,
+      "last_error": "HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Max retries exceeded with url: /journal/details?gch=94534X (Caused by ReadTimeoutError(\"HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Read timed out. (read timeout=20)\"))",
+      "last_failure_at": "2026-11-09T16:24:27.710117Z",
       "last_success_at": "2026-11-02T15:58:29.283574Z"
     },
     "NCPSSD·数量经济技术经济研究": {
-      "consecutive_failures": 0,
-      "last_error": "",
-      "last_failure_at": null,
+      "consecutive_failures": 1,
+      "last_error": "HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Max retries exceeded with url: /journal/details?gch=94503X (Caused by ReadTimeoutError(\"HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Read timed out. (read timeout=20)\"))",
+      "last_failure_at": "2026-11-09T16:24:27.710117Z",
       "last_success_at": "2026-11-02T15:58:29.283574Z"
     },
     "NCPSSD·社会发展研究": {
-      "consecutive_failures": 0,
-      "last_error": "",
-      "last_failure_at": null,
+      "consecutive_failures": 1,
+      "last_error": "HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Max retries exceeded with url: /journal/details?gch=72041X (Caused by ReadTimeoutError(\"HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Read timed out. (read timeout=20)\"))",
+      "last_failure_at": "2026-11-09T16:24:27.710117Z",
       "last_success_at": "2026-11-02T15:58:29.283574Z"
     },
     "NCPSSD·社会学研究": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "NCPSSD·社会建设": {
-      "consecutive_failures": 0,
-      "last_error": "",
-      "last_failure_at": null,
+      "consecutive_failures": 1,
+      "last_error": "HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Max retries exceeded with url: /journal/details?gch=72016X (Caused by ReadTimeoutError(\"HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Read timed out. (read timeout=20)\"))",
+      "last_failure_at": "2026-11-09T16:24:27.710117Z",
       "last_success_at": "2026-11-02T15:58:29.283574Z"
     },
     "NCPSSD·管理世界": {
-      "consecutive_failures": 0,
-      "last_error": "",
-      "last_failure_at": null,
+      "consecutive_failures": 1,
+      "last_error": "HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Max retries exceeded with url: /journal/details?gch=95499X (Caused by ReadTimeoutError(\"HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Read timed out. (read timeout=20)\"))",
+      "last_failure_at": "2026-11-09T16:24:27.710117Z",
       "last_success_at": "2026-11-02T15:58:29.283574Z"
     },
     "NCPSSD·经济学动态": {
-      "consecutive_failures": 0,
-      "last_error": "",
-      "last_failure_at": null,
+      "consecutive_failures": 1,
+      "last_error": "HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Max retries exceeded with url: /journal/details?gch=93743X (Caused by ReadTimeoutError(\"HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Read timed out. (read timeout=20)\"))",
+      "last_failure_at": "2026-11-09T16:24:27.710117Z",
       "last_success_at": "2026-11-02T15:58:29.283574Z"
     },
     "NCPSSD·经济学（季刊）": {
-      "consecutive_failures": 0,
-      "last_error": "",
-      "last_failure_at": null,
+      "consecutive_failures": 1,
+      "last_error": "HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Max retries exceeded with url: /journal/details?gch=84307X (Caused by ReadTimeoutError(\"HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Read timed out. (read timeout=20)\"))",
+      "last_failure_at": "2026-11-09T16:24:27.710117Z",
       "last_success_at": "2026-11-02T15:58:29.283574Z"
     },
     "NCPSSD·经济理论与经济管理": {
-      "consecutive_failures": 0,
-      "last_error": "",
-      "last_failure_at": null,
+      "consecutive_failures": 1,
+      "last_error": "HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Max retries exceeded with url: /journal/details?gch=95590X (Caused by ReadTimeoutError(\"HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Read timed out. (read timeout=20)\"))",
+      "last_failure_at": "2026-11-09T16:24:27.710117Z",
       "last_success_at": "2026-11-02T15:58:29.283574Z"
     },
     "NCPSSD·经济研究": {
-      "consecutive_failures": 0,
-      "last_error": "",
-      "last_failure_at": null,
+      "consecutive_failures": 1,
+      "last_error": "HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Max retries exceeded with url: /journal/details?gch=95645X (Caused by ReadTimeoutError(\"HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Read timed out. (read timeout=20)\"))",
+      "last_failure_at": "2026-11-09T16:24:27.710117Z",
       "last_success_at": "2026-11-02T15:58:29.283574Z"
     },
     "NCPSSD·经济社会体制比较": {
-      "consecutive_failures": 0,
-      "last_error": "",
-      "last_failure_at": null,
+      "consecutive_failures": 1,
+      "last_error": "HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Max retries exceeded with url: /journal/details?gch=93736X (Caused by ReadTimeoutError(\"HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Read timed out. (read timeout=20)\"))",
+      "last_failure_at": "2026-11-09T16:24:27.710117Z",
       "last_success_at": "2026-11-02T15:58:29.283574Z"
     },
     "NCPSSD·经济科学": {
-      "consecutive_failures": 0,
-      "last_error": "",
-      "last_failure_at": null,
+      "consecutive_failures": 1,
+      "last_error": "HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Max retries exceeded with url: /journal/details?gch=95614X (Caused by ReadTimeoutError(\"HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Read timed out. (read timeout=20)\"))",
+      "last_failure_at": "2026-11-09T16:24:27.710117Z",
       "last_success_at": "2026-11-02T15:58:29.283574Z"
     },
     "NCPSSD·经济评论": {
-      "consecutive_failures": 0,
-      "last_error": "",
-      "last_failure_at": null,
+      "consecutive_failures": 1,
+      "last_error": "HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Max retries exceeded with url: /journal/details?gch=82170X (Caused by ReadTimeoutError(\"HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Read timed out. (read timeout=20)\"))",
+      "last_failure_at": "2026-11-09T16:24:27.710117Z",
       "last_success_at": "2026-11-02T15:58:29.283574Z"
     },
     "NCPSSD·西北人口": {
-      "consecutive_failures": 0,
-      "last_error": "",
-      "last_failure_at": null,
+      "consecutive_failures": 1,
+      "last_error": "HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Max retries exceeded with url: /journal/details?gch=96477X (Caused by ReadTimeoutError(\"HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Read timed out. (read timeout=20)\"))",
+      "last_failure_at": "2026-11-09T16:24:27.710117Z",
       "last_success_at": "2026-11-02T15:58:29.283574Z"
     },
     "NCPSSD·财经研究": {
-      "consecutive_failures": 0,
-      "last_error": "",
-      "last_failure_at": null,
+      "consecutive_failures": 1,
+      "last_error": "HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Max retries exceeded with url: /journal/details?gch=96218X (Caused by ReadTimeoutError(\"HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Read timed out. (read timeout=20)\"))",
+      "last_failure_at": "2026-11-09T16:24:27.710117Z",
       "last_success_at": "2026-11-02T15:58:29.283574Z"
     },
     "NCPSSD·财贸经济": {
-      "consecutive_failures": 0,
-      "last_error": "",
-      "last_failure_at": null,
+      "consecutive_failures": 1,
+      "last_error": "HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Max retries exceeded with url: /journal/details?gch=96197X (Caused by ReadTimeoutError(\"HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Read timed out. (read timeout=20)\"))",
+      "last_failure_at": "2026-11-09T16:24:27.710117Z",
       "last_success_at": "2026-11-02T15:58:29.283574Z"
     },
     "NCPSSD·金融研究": {
-      "consecutive_failures": 0,
-      "last_error": "",
-      "last_failure_at": null,
+      "consecutive_failures": 1,
+      "last_error": "HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Max retries exceeded with url: /journal/details?gch=97926X (Caused by ReadTimeoutError(\"HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Read timed out. (read timeout=20)\"))",
+      "last_failure_at": "2026-11-09T16:24:27.710117Z",
       "last_success_at": "2026-11-02T15:58:29.283574Z"
     },
     "NCPSSD·青年研究": {
-      "consecutive_failures": 0,
-      "last_error": "",
-      "last_failure_at": null,
+      "consecutive_failures": 1,
+      "last_error": "HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Max retries exceeded with url: /journal/details?gch=80985X (Caused by ReadTimeoutError(\"HTTPSConnectionPool(host='m.ncpssd.cn', port=443): Read timed out. (read timeout=20)\"))",
+      "last_failure_at": "2026-11-09T16:24:27.710117Z",
       "last_success_at": "2026-11-02T15:58:29.283574Z"
     },
     "官网｜人口研究": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": null,
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "官网｜社会": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": "2026-08-02T08:18:27.714006Z",
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     },
     "官网｜社会学评论": {
       "consecutive_failures": 0,
       "last_error": "",
       "last_failure_at": "2026-09-14T12:51:05.242759Z",
-      "last_success_at": "2026-11-02T15:58:29.283574Z"
+      "last_success_at": "2026-11-09T16:24:27.710117Z"
     }
   },
   "version": 1
